@@ -30,7 +30,7 @@
   },
   "content_scripts":[
     {
-      "css":[],
+      "css":["cscripts/canvas.css"],
       "js":["cscripts/canvas.js"],
       "matches": ["https://canvas.allenisd.org/*", "https://allenisd.instructure.com/*"]
     }

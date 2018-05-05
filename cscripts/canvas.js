@@ -29,7 +29,6 @@ if(window.location.pathname.startsWith("/courses/")){
   var aisdCourse = document.querySelector('li.section > a[title="Home"]').href;
   var aisdConEd = document.querySelector('li.section > a[title="ConnectED"]');
   var aisdConEdLoc = aisdConEd.href;
-  var aisdConEdClass = aisdConEd.classList;
   aisdConEd.parentElement.remove();
 
   var aisdSectionTabs = document.querySelector('nav > ul#section-tabs'); // section-tabs
@@ -41,7 +40,6 @@ if(window.location.pathname.startsWith("/courses/")){
   var aisdConEdSrc = document.createElement("li");
   aisdConEdSrc.classList.add("section");
   var aisdConEd = document.createElement("a");
-  aisdConEd.classList = aisdConEdClass;
   aisdConEd.innerHTML = "ConnectED";
   aisdConEd.title = "ConnectED";
   aisdConEd.href = aisdConEdLoc;
