@@ -6,8 +6,7 @@
   "description": "Useful tweaks for canvas and other AISD stuff",
   "permissions":[
     "declarativeContent",
-    "storage",
-    "https://*.allenisd.org/"
+    "storage"
   ],
   "icons":{
     "16": "images/icon16.png",
@@ -32,7 +31,8 @@
     {
       "css":["cscripts/canvas.css"],
       "js":["cscripts/canvas.js"],
-      "matches": ["https://canvas.allenisd.org/*", "https://allenisd.instructure.com/*"]
+      "matches": ["https://canvas.allenisd.org/*"],
+      "run_at": "document_end"
     }
   ],
   "web_accessible_resources":[
