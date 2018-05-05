@@ -14,6 +14,16 @@ See the License for the specific language governing permissions and
 limitations under the License.
 **/
 
+// Edit the dashboard cards
+if(window.location.pathname == "/"){
+  var aisdDBCards = document.querySelectorAll('div.ic-DashboardCard__header > a.ic-DashboardCard__link');
+  for(j = 0; j < aisdDBCards.length; j++){
+    i = aisdDBCards[j];
+    i.href = i.href+"/modules";
+    i.onclick = 'window.location = "'+i.href+'";';
+  }
+}
+
 // Edit the ConnectED button
 if(window.location.pathname.startsWith("/courses/")){
   var aisdCourse = document.querySelector('li.section > a[title="Home"]').href;
