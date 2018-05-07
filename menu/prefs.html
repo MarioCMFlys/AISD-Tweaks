@@ -20,14 +20,20 @@ limitations under the License.
     <link rel="stylesheet" type="text/css" href="/menu/common.css">
     <style>
     div.main{
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      text-align: center;
-      transform: translateY(-50%);
+      overflow-y: auto;
+      padding: 10px;
     }
-    h3.b{
-      color: #AAAAAA;
+    form#opt legend{
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    form#opt{
+      font-size: 14px;
+    }
+    form#opt label.ex{
+      color: #AA0000;
     }
     </style>
   </head>
@@ -36,11 +42,20 @@ limitations under the License.
       <table><tr><td><img class="header-logo" src="/images/menu-logo.png"></td><td style="padding-left: 5px;"><h3>AISD Tweaks</h3><small>Preferences</small></td></tr></table>
     </div>
     <div class="main">
-      <h1>Nothing to see here!</h1>
-      <h3 class="b">(yet)</h3>
+      <form id="opt">
+        <legend>Canvas</legend>
+        <label><input type="checkbox" id="canvasListModules" value="yes">course list redirect to modules</label><br>
+        <label><input type="checkbox" id="canvasPeople" value="yes">course people button</label><br>
+        <legend>Portal</legend>
+        <label><input type="checkbox" id="portalHelp" value="yes">password help link</label><br>
+        <legend>Experimental</legend>
+        <label class="ex"><input type="checkbox" id="canvasDarkTheme" value="yes">Canvas dark theme</label><br>
+        <button type="submit" style="margin-top: 10px;" id="btnSave">Save Changes</button>
+      </form>
     </div>
     <div class="bottom">
       <a href="popup.html">&lt; Go Back</a>
     </div>
+    <script type="text/javascript" src="prefs.js"></script>
   </body>
 </html>
