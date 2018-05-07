@@ -15,4 +15,5 @@ limitations under the License.
 **/
 
 verNo = chrome.runtime.getManifest().version;
+document.getElementById('version').innerHTML = 'Version '+verNo;
 document.getElementById('frame').innerHTML = '<iframe id="update" src="https://mariocmflys.tk/stuff/aisd-tweaks/version.php?v='+verNo+'">Could not check for updates</iframe>';
