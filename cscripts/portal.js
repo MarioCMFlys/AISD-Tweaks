@@ -15,7 +15,8 @@ limitations under the License.
 **/
 
 // Add the forgot password link
-if(window.location.pathname.startsWith("/_auth/login.aspx")){
+if(window.location.pathname.startsWith("/_auth/login.aspx")
+ || window.location.pathname.startsWith("/_auth/login_idp.aspx")){
   chrome.storage.sync.get("portalHelp", function(result){
 
     if(result["portalHelp"] == true || result["portalHelp"] != false){
