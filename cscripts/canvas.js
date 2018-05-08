@@ -51,24 +51,32 @@ if(window.location.pathname.startsWith("/courses/")){
   });**/
 
   // People / users link
-  if(document.querySelector('li.section > a[title="People"]')){
-    document.querySelector('li.section > a[title="People"]').remove();
-  }
-  aisdPeopleClass = "";
-  if(window.location.pathname.endsWith("/users") || window.location.pathname.endsWith("/groups")){aisdPeopleClass = "active";}
-  aisdSectionTabs.innerHTML = aisdSectionTabs.innerHTML+'<li class="section"><a href="'+aisdCourse+'/users" class="'+aisdPeopleClass+'" tabindex="0" title="People">People</a></li>';
-  // Append the ConnectED link
-  aisdSectionTabs.appendChild(aisdConEdSrc);
-  aisdConEdSrc.appendChild(aisdConEd);
+  chrome.storage.sync.get("canvasPeople", function(result){
+    if(result["canvasPeople"] == true || result["canvasPeople"] != false){
+      if(document.querySelector('li.section > a[title="People"]')){
+        document.querySelector('li.section > a[title="People"]').remove();
+      }
+      aisdPeopleClass = "";
+      if(window.location.pathname.endsWith("/users") || window.location.pathname.endsWith("/groups")){aisdPeopleClass = "active";}
+      aisdSectionTabs.innerHTML = aisdSectionTabs.innerHTML+'<li class="section"><a href="'+aisdCourse+'/users" class="'+aisdPeopleClass+'" tabindex="0" title="People">People</a></li>';
+    }
+    // Append the ConnectED link
+    aisdSectionTabs.appendChild(aisdConEdSrc);
+    aisdConEdSrc.appendChild(aisdConEd);
+  });
 }
 
 // Edit the navbar courses
-document.getElementById("global_nav_courses_link").addEventListener('click', function(){
-  setTimeout(function(){
-    var aisdNavCrs = document.querySelectorAll('li > span > a[href^="/courses/"]');
-    for(j = 0; j < aisdNavCrs.length; j++){
-      i = aisdNavCrs[j];
-      i.href = i.href+"/modules";
-    }
-  }, 70);
+chrome.storage.sync.get("canvasListModules", function(result){
+  if(result["canvasListModules"] == true || result["canvasListModules"] != false){
+    document.getElementById("global_nav_courses_link").addEventListener('click', function(){
+      setTimeout(function(){
+        var aisdNavCrs = document.querySelectorAll('li > span > a[href^="/courses/"]');
+        for(j = 0; j < aisdNavCrs.length; j++){
+          i = aisdNavCrs[j];
+          i.href = i.href+"/modules";
+        }
+      }, 70);
+    });
+  }
 });

@@ -16,17 +16,22 @@ limitations under the License.
 
 // Add the forgot password link
 if(window.location.pathname.startsWith("/_auth/login.aspx")){
-  var aisdPasswordModal = `
-  <h3>I keep entering my password wrong</h3>
-  <p>If you enter your password incorrectly more than 6 times, you will be temporarily locked out of your account. If this happens, wait 5 minutes and your account will automatically unlock.</p>
-  <h3>I forgot my password</h3>
-  <p>If you believe you have forgotten your password, your only option is to go to your campus IT representative (Librarian, Technician, etc.) and ask them to reset it for you.</p>
-  <br>
-  <small>from AISD-TWEAKS</small>
-  `;
-  var aisdPasswordLink = '<label><a href="#" onclick="window.open(\'about:blank\').document.write(\`'+aisdPasswordModal+'\`);">Password Help</a></label>';
+  chrome.storage.sync.get("portalHelp", function(result){
 
-  var aisdPanel = document.getElementById("pnlLogon");
-  aisdPanel.children[3].innerHTML = aisdPasswordLink;
-  aisdPanel.children[2].remove();
+    if(result["portalHelp"] == true || result["portalHelp"] != false){
+      var aisdPasswordModal = `
+      <h3>I keep entering my password wrong</h3>
+      <p>If you enter your password incorrectly more than 6 times, you will be temporarily locked out of your account. If this happens, wait 5 minutes and your account will automatically unlock.</p>
+      <h3>I forgot my password</h3>
+      <p>If you believe you have forgotten your password, your only option is to go to your campus IT representative (Librarian, Technician, etc.) and ask them to reset it for you.</p>
+      <br>
+      <small>from AISD-TWEAKS</small>
+      `;
+      var aisdPasswordLink = '<label><a href="#" onclick="window.open(\'about:blank\').document.write(\`'+aisdPasswordModal+'\`);">Password Help</a></label>';
+
+      var aisdPanel = document.getElementById("pnlLogon");
+      aisdPanel.children[3].innerHTML = aisdPasswordLink;
+      aisdPanel.children[2].remove();
+    }
+  });
 }
