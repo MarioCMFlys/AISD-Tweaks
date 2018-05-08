@@ -39,9 +39,16 @@
       "js":["cscripts/portal.js"],
       "matches": ["https://portal.allenisd.org/*"],
       "run_at": "document_end"
+    },
+    {
+      "css":[],
+      "js":["cscripts/canvasdark.js"],
+      "matches": ["https://canvas.allenisd.org/*"],
+      "run_at": "document_start"
     }
   ],
   "web_accessible_resources":[
+    "cscripts/canvasdark.css",
     "images/*.png"
   ]
 }

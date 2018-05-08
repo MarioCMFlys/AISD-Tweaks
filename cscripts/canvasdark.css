@@ -1,0 +1,145 @@
+/**
+Copyright 2018 MarioCMFlys
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+**/
+
+:root{
+  --ic-link-color: #207FDF;
+  --ic-link-color-darkened-10: #1965B3;
+  --ic-brand-primary: #207FDF;
+}
+
+body{
+  background-color: #2C2F33;
+}
+header.ic-app-header{
+  background-color: #23272A !important;
+}
+div#main > span > span{
+  background-color: #23272A !important;
+}
+div#main > span > span > span > div.tray-with-space-for-global-nav > div h2{
+  color: #DDDDDD;
+}
+div#main > span > span > span > div.tray-with-space-for-global-nav > div hr{
+  border-color: #394146 !important;
+}
+div#main > span > span > span > div.tray-with-space-for-global-nav > div > ul > li > span > a{
+  color: var(--ic-link-color);
+}
+div#main > span > span > span > div.tray-with-space-for-global-nav > div > ul > li > span > a:hover{
+  color: var(--ic-link-color-darkened-10);
+}
+div#main > span > span > span > div.tray-with-space-for-global-nav > div > ul > li > div{
+  color: #888888;
+}
+div#main > span > span > span > div.tray-with-space-for-global-nav > div span{
+  color: #BBBBBB;
+}
+
+
+div.ic-Dashboard-header__layout{
+  color: #DDDDDD;
+  background-color: #2C2F33F2;
+  border-bottom: 1px solid #394146;
+}
+div#DashboardOptionsMenu_Container button{
+  color: #DDD;
+}
+
+
+div.ic-DashboardCard__header_content{
+  background-color: inherit !important;
+}
+div.ic-DashboardCard{
+  background-color: #23272A;
+}
+div.ic-DashboardCard a{
+  /*color: #207FDF;*/
+}
+
+aside#right-side h2{
+  color: #DDDDDD;
+  border-bottom: 1px solid #394146;
+}
+#right-side .right-side-list li em,
+ #right-side .right-side-list li p{
+  color: #808080 !important;
+}
+ul.right-side-list i{
+  color: #808080 !important;
+}
+ul.right-side-list li{
+  color: #808080 !important;
+}
+li.todo button.disable-todo-item-link i.icon-x{
+  color: #757575;
+}
+div.todo-details::after,
+div.event-details::after{
+  display: none;
+}
+a.icon-calendar-day::before{
+  color: #656565;
+}
+.btn, .Button, .ui-button{
+  color: #DDDDDD;
+}
+.btn, .Button:not(.ic-DashboardCard__header-button)
+             :not(.disable_item_link)
+             :not(.ic-app-course-nav-toggle), .ui-button{
+  background-color: #23272A;
+  border-color: #1E2224;
+}
+
+
+div.ic-app-nav-toggle-and-crumbs{
+  border-bottom: 1px solid #394146 !important;
+}
+nav#breadcrumbs{
+  background-color: inherit;
+}
+nav#breadcrumbs a{
+  color: var(--ic-link-color) !important;
+}
+nav#breadcrumbs a:hover{
+  color: var(--ic-link-color-darkened-10) !important;
+}
+span#section-tabs-header-subtitle{
+  color: #808080 !important;
+}
+div.ic-app-course-menu li.section a{
+  color: #AAA !important;
+}
+div.ic-app-course-menu li.section a:hover{
+  background-color: #23272A !important;
+  color: #CCC !important;
+}
+div.ic-app-course-menu li.section a.active{
+  color: #FFF !important;
+}
+div.ic-app-course-menu li.section a.active:hover{
+  background-color: var(--ic-brand-primary) !important;
+}
+
+div#wiki_page_show{
+  color: #DDDDDD !important;
+}
+div#wiki_page_show div.header-bar{
+  background-color: inherit !important;
+  border-bottom: 1px solid #394146 !important;
+}
+div#wiki_page_show div.header-bar h2{
+  color: #FFF !important;
+}
