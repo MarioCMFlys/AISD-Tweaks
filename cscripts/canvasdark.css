@@ -15,8 +15,8 @@ limitations under the License.
 **/
 
 :root{
-  --ic-link-color: #258EF7;
-  --ic-link-color-darkened-10: #207FDF;
+  --ic-link-color: #33C7FF;
+  --ic-link-color-darkened-10: #2EB3E6;
   --ic-brand-primary: #207FDF;
 }
 
@@ -42,7 +42,7 @@ div#main > span > span > span > div.tray-with-space-for-global-nav > div > ul > 
   color: var(--ic-link-color-darkened-10);
 }
 div#main > span > span > span > div.tray-with-space-for-global-nav > div > ul > li > div{
-  color: #888888;
+  color: #AAAAAA;
 }
 div#main > span > span > span > div.tray-with-space-for-global-nav > div span{
   color: #BBBBBB;
