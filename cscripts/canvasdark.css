@@ -15,8 +15,8 @@ limitations under the License.
 **/
 
 :root{
-  --ic-link-color: #33C7FF;
-  --ic-link-color-darkened-10: #2EB3E6;
+  --ic-link-color: #97C3D3;
+  --ic-link-color-darkened-10: #5AA0BA;
   --ic-brand-primary: #207FDF;
 }
 
@@ -173,7 +173,8 @@ div#assignment_show{
 div#assignment_show div.title-content h1.title{
   color: #FFF !important;
 }
-div#assignment_show ul.student-assignment-overview{
+div#assignment_show ul.student-assignment-overview,
+div#quiz_show ul#quiz_student_details{
   color: #AAA !important;
   border-top-color: #394146 !important;
   border-bottom-color: #394146 !important;
@@ -201,7 +202,44 @@ aside#right-side div.details div.module a i.icon-rubric{
   color: #999;
 }
 
- /** TODO UNCOMMITED WORK: Add modules and the rubric **/
+
+aside#right-side table.summary th,
+aside#right-side table.summary td{
+  background-color: inherit;
+  border-bottom-color: #394146;
+}
+
+div#quiz-submission-version-table table.ic-Table td,
+div#quiz-submission-version-table table.ic-Table th{
+  border-bottom-color: #394146;
+}
+div.quiz_score span.score_value{
+  color: #FFF;
+}
+div.quiz-submission{
+  background-color: inherit;
+  border: none;
+}
+header.quiz-header{
+  border-bottom-color: #394146;
+}
+
+div.display_question{
+  background-color: inherit;
+  border-color: #394146;
+}
+div.display_question div.header{
+  background-color: #394146 !important;
+  border-bottom: 0px;
+}
+div.display_question div.answer{
+  border-top-color: #394146 !important;
+}
+
+form#submit_quiz_form div#questions{
+  background-color: inherit;
+}
+
 div.ic-Layout-contentMain div.header-bar{
   background-color: inherit;
   color: #FFF;
