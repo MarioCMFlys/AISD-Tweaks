@@ -15,8 +15,8 @@ limitations under the License.
 **/
 
 :root{
-  --ic-link-color: #207FDF;
-  --ic-link-color-darkened-10: #1965B3;
+  --ic-link-color: #258EF7;
+  --ic-link-color-darkened-10: #207FDF;
   --ic-brand-primary: #207FDF;
 }
 
@@ -96,9 +96,7 @@ a.icon-calendar-day::before{
 .btn, .Button, .ui-button{
   color: #DDDDDD;
 }
-.btn, .Button:not(.ic-DashboardCard__header-button)
-             :not(.disable_item_link)
-             :not(.ic-app-course-nav-toggle), .ui-button{
+.btn, .Button:not(.ic-DashboardCard__header-button):not(.disable_item_link):not(.ic-app-course-nav-toggle), .ui-button{
   background-color: #23272A;
   border-color: #1E2224;
 }
