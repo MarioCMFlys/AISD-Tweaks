@@ -26,6 +26,9 @@ body{
 header.ic-app-header{
   background-color: #23272A !important;
 }
+div.ic-app-header__logomark-container{
+  background-color: inherit;
+}
 div#main > span > span{
   background-color: #23272A !important;
 }
