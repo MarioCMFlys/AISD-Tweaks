@@ -131,6 +131,7 @@ div.ic-app-course-menu li.section a.active:hover{
   background-color: var(--ic-brand-primary) !important;
 }
 
+
 div#wiki_page_show{
   color: #DDDDDD !important;
 }
@@ -140,4 +141,23 @@ div#wiki_page_show div.header-bar{
 }
 div#wiki_page_show div.header-bar h2{
   color: #FFF !important;
+}
+
+div#assignment_show{
+  color: #DDD !important;
+}
+div#assignment_show div.title-content h1.title{
+  color: #FFF !important;
+}
+div#assignment_show ul.student-assignment-overview{
+  color: #AAA !important;
+  border-top-color: #394146 !important;
+  border-bottom-color: #394146 !important;
+}
+div#assignment_show div.description hr{
+  border-color: #394146 !important;
+}
+div.module-sequence-footer-content{
+  background: inherit !important;
+  border-top-color: #394146 !important;
 }
