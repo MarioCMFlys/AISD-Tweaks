@@ -110,6 +110,7 @@ div.ic-app-nav-toggle-and-crumbs{
 }
 nav#breadcrumbs{
   background-color: inherit;
+  color: #DDD;
 }
 nav#breadcrumbs a{
   color: var(--ic-link-color) !important;
@@ -134,6 +135,26 @@ div.ic-app-course-menu li.section a.active:hover{
   background-color: var(--ic-brand-primary) !important;
 }
 
+
+div.ic-Layout-contentMain{
+  color: #DDD;
+}
+div.ic-Layout-contentMain h1,
+div.ic-Layout-contentMain h2{
+  color: #FFF;
+}
+table.student_grades td{
+  border-bottom-color: #394146;
+}
+
+ul li.ic-flash-success{
+  background-color: #23272A;
+  color: #DDD;
+  border-color: #1BB127;
+}
+ul li.ic-flash-success div.ic-flash__icon{
+  background-color: #1BB127 !important;
+}
 
 div#wiki_page_show{
   color: #DDDDDD !important;
@@ -163,4 +184,57 @@ div#assignment_show div.description hr{
 div.module-sequence-footer-content{
   background: inherit !important;
   border-top-color: #394146 !important;
+}
+div.rubric div.rubric_title{
+  background-color: inherit;
+}
+div.rubric table.rubric_table th{
+  background-color: inherit;
+}
+aside#right-side{
+  color: #DDD;
+}
+aside#right-side div.details div.header{
+  color: #BBB;
+}
+aside#right-side div.details div.module a i.icon-rubric{
+  color: #999;
+}
+
+ /** TODO UNCOMMITED WORK: Add modules and the rubric **/
+div.ic-Layout-contentMain div.header-bar{
+  background-color: inherit;
+  color: #FFF;
+  border-bottom-color: #394146;
+}
+div.ic-Layout-contentMain div.item-group-container{
+  background-color: #3B3F44;
+  border-color: #474C52;
+}
+div.ic-Layout-contentMain div.item-group-container div.ig-header.header,
+div.ic-Layout-contentMain div.item-group-container div.ig-header.header span.name{
+  color: #EEE;
+  text-shadow: none;
+}
+
+div.ic-Layout-contentMain div.item-group-container div.content div.ig-row{
+  background-color: #40444A;
+  border-color: #474C52;
+  color: #DDD;
+}
+div.ic-Layout-contentMain div.item-group-container div.content div.ig-row a{
+  color: #DDD !important;
+}
+div.ic-Layout-contentMain div.item-group-container div.item-group-condensed{
+  border-bottom-color: #5F656D;
+}
+.context_module i.icon-minimize{
+  color: #FD3300;
+}
+div.requirements_message .pill{
+  box-shadow: none;
+  border-color: #EEE;
+}
+div.module-item-status-icon i.icon-check{
+  color: #1BB127;
 }
