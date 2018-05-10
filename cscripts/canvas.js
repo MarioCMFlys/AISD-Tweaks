@@ -19,6 +19,7 @@ if(window.location.pathname == "/"){
   var aisdDBCards = document.querySelectorAll('div.ic-DashboardCard__header > a.ic-DashboardCard__link');
   for(j = 0; j < aisdDBCards.length; j++){
     i = aisdDBCards[j];
+
     i.href = i.href+"/modules";
     i.onclick = 'window.location = "'+i.href+'";';
   }
@@ -28,7 +29,14 @@ if(window.location.pathname == "/"){
 if(window.location.pathname.startsWith("/courses/")){
   var aisdCourse = document.querySelector('li.section > a[title="Home"]').href;
   var aisdConEd = document.querySelector('li.section > a[title="ConnectED"]');
-  var aisdConEdLoc = aisdConEd.href;
+  var aisdConExists = false;
+  if(aisdConEd != undefined){
+    var aisdConEdLoc = aisdConEd.href;
+    var aisdConExists = true;
+  }
+
+
+
   aisdConEd.parentElement.remove();
 
   var aisdSectionTabs = document.querySelector('nav > ul#section-tabs'); // section-tabs
@@ -36,19 +44,14 @@ if(window.location.pathname.startsWith("/courses/")){
   aisdSectionName.style = "color: hsla(207,4%,40%,1);font-size:9pt;margin-top:20px;margin-bottom:0px;margin-left:5px;";
   aisdSectionName.innerHTML = "AISD TWEAKS";
   aisdSectionTabs.appendChild(aisdSectionName);
-
-  var aisdConEdSrc = document.createElement("li");
-  aisdConEdSrc.classList.add("section");
-  var aisdConEd = document.createElement("a");
-  aisdConEd.innerHTML = "ConnectED";
-  aisdConEd.title = "ConnectED";
-  aisdConEd.href = aisdConEdLoc;
-  //aisdConEd.style.color = "#7A8085";
-  /**aisdConEd.addEventListener("click", function(){
-    if(confirm("Press OK to open ConnectED")){
-      window.location = aisdConEdLoc;
-    }
-  });**/
+  if(aisdConExists){
+    var aisdConEdSrc = document.createElement("li");
+    aisdConEdSrc.classList.add("section");
+    var aisdConEd = document.createElement("a");
+    aisdConEd.innerHTML = "ConnectED";
+    aisdConEd.title = "ConnectED";
+    aisdConEd.href = aisdConEdLoc;
+  }
 
   // People / users link
   chrome.storage.sync.get("canvasPeople", function(result){
@@ -61,8 +64,11 @@ if(window.location.pathname.startsWith("/courses/")){
       aisdSectionTabs.innerHTML = aisdSectionTabs.innerHTML+'<li class="section"><a href="'+aisdCourse+'/users" class="'+aisdPeopleClass+'" tabindex="0" title="People">People</a></li>';
     }
     // Append the ConnectED link
-    aisdSectionTabs.appendChild(aisdConEdSrc);
-    aisdConEdSrc.appendChild(aisdConEd);
+    if(aisdConExists){
+      aisdSectionTabs.appendChild(aisdConEdSrc);
+      aisdConEdSrc.appendChild(aisdConEd);
+    }
+
   });
 }
 
