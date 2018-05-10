@@ -33,11 +33,8 @@ if(window.location.pathname.startsWith("/courses/")){
   if(aisdConEd != undefined){
     var aisdConEdLoc = aisdConEd.href;
     var aisdConExists = true;
+    aisdConEd.parentElement.remove();
   }
-
-
-
-  aisdConEd.parentElement.remove();
 
   var aisdSectionTabs = document.querySelector('nav > ul#section-tabs'); // section-tabs
   var aisdSectionName = document.createElement("p");
