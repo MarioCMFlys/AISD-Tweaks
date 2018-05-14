@@ -1,0 +1,324 @@
+/**
+Copyright 2018 MarioCMFlys
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+**/
+
+:root{
+  --ic-link-color: #97C3D3;
+  --ic-link-color-darkened-10: #5AA0BA;
+  --ic-brand-primary: #207FDF;
+}
+
+body{
+  background-color: #2C2F33;
+}
+header.ic-app-header{
+  background-color: #23272A !important;
+}
+div.ic-app-header__logomark-container{
+  background-color: inherit;
+}
+div#main > span > span{
+  background-color: #23272A !important;
+}
+div#main > span > span > span > div.tray-with-space-for-global-nav > div h2{
+  color: #DDDDDD;
+}
+div#main > span > span > span > div.tray-with-space-for-global-nav > div hr{
+  border-color: #394146 !important;
+}
+div#main > span > span > span > div.tray-with-space-for-global-nav > div > ul > li > span > a{
+  color: var(--ic-link-color);
+}
+div#main > span > span > span > div.tray-with-space-for-global-nav > div > ul > li > span > a:hover{
+  color: var(--ic-link-color-darkened-10);
+}
+div#main > span > span > span > div.tray-with-space-for-global-nav > div > ul > li > div{
+  color: #AAAAAA;
+}
+div#main > span > span > span > div.tray-with-space-for-global-nav > div span{
+  color: #BBBBBB;
+}
+
+div.ic-Dashboard-header__layout{
+  color: #DDDDDD;
+  background-color: #2C2F33F2;
+  border-bottom: 1px solid #394146;
+}
+div#DashboardOptionsMenu_Container button{
+  color: #DDD;
+}
+div.
+
+div.ic-DashboardCard__header_content{
+  background-color: inherit !important;
+}
+div.ic-DashboardCard{
+  background-color: #23272A;
+}
+div.ic-DashboardCard a{
+  /*color: #207FDF;*/
+}
+
+aside#right-side h2{
+  color: #DDDDDD;
+  border-bottom: 1px solid #394146;
+}
+#right-side .right-side-list li em,
+ #right-side .right-side-list li p{
+  color: #808080 !important;
+}
+ul.right-side-list i{
+  color: #808080 !important;
+}
+ul.right-side-list li{
+  color: #808080 !important;
+}
+li.todo button.disable-todo-item-link i.icon-x{
+  color: #757575;
+}
+div.todo-details::after,
+div.event-details::after{
+  display: none;
+}
+a.icon-calendar-day::before{
+  color: #656565;
+}
+.btn, .Button, .ui-button{
+  color: #DDDDDD;
+}
+.btn, .Button:not(.ic-DashboardCard__header-button):not(.disable_item_link):not(.ic-app-course-nav-toggle), .ui-button{
+  background-color: #23272A;
+  border-color: #1E2224;
+}
+
+
+
+div.ic-app-nav-toggle-and-crumbs{
+  border-bottom: 1px solid #394146 !important;
+}
+nav#breadcrumbs{
+  background-color: inherit;
+  color: #DDD;
+}
+nav#breadcrumbs a{
+  color: var(--ic-link-color) !important;
+}
+nav#breadcrumbs a:hover{
+  color: var(--ic-link-color-darkened-10) !important;
+}
+span#section-tabs-header-subtitle{
+  color: #808080 !important;
+}
+div.ic-app-course-menu li.section a{
+  color: #AAA !important;
+}
+div.ic-app-course-menu li.section a:hover{
+  background-color: #23272A !important;
+  color: #CCC !important;
+}
+div.ic-app-course-menu li.section a.active{
+  color: #FFF !important;
+}
+div.ic-app-course-menu li.section a.active:hover{
+  background-color: var(--ic-brand-primary) !important;
+}
+
+
+div.ic-Layout-contentMain{
+  color: #DDD;
+}
+div.ic-Layout-contentMain h1,
+div.ic-Layout-contentMain h2{
+  color: #FFF;
+}
+table.student_grades td{
+  border-bottom-color: #394146;
+}
+
+ul li.ic-flash-success{
+  background-color: #23272A;
+  color: #DDD;
+  border-color: #1BB127;
+}
+ul li.ic-flash-success div.ic-flash__icon{
+  background-color: #1BB127 !important;
+}
+
+div#wiki_page_show{
+  color: #DDDDDD !important;
+}
+div#wiki_page_show div.header-bar{
+  background-color: inherit !important;
+  border-bottom: 1px solid #394146 !important;
+}
+div#wiki_page_show div.header-bar h2{
+  color: #FFF !important;
+}
+
+div#assignment_show{
+  color: #DDD !important;
+}
+div#assignment_show div.title-content h1.title{
+  color: #FFF !important;
+}
+div#assignment_show ul.student-assignment-overview,
+div#quiz_show ul#quiz_student_details{
+  color: #AAA !important;
+  border-top-color: #394146 !important;
+  border-bottom-color: #394146 !important;
+}
+div#assignment_show div.description hr{
+  border-color: #394146 !important;
+}
+div.module-sequence-footer-content{
+  background: inherit !important;
+  border-top-color: #394146 !important;
+}
+div.rubric div.rubric_title{
+  background-color: inherit;
+}
+div.rubric table.rubric_table th{
+  background-color: inherit;
+}
+aside#right-side{
+  color: #DDD;
+}
+aside#right-side div.details div.header{
+  color: #BBB;
+}
+aside#right-side div.details div.module a i.icon-rubric{
+  color: #999;
+}
+
+
+aside#right-side table.summary th,
+aside#right-side table.summary td{
+  background-color: inherit;
+  border-bottom-color: #394146;
+}
+
+div#quiz-submission-version-table table.ic-Table td,
+div#quiz-submission-version-table table.ic-Table th{
+  border-bottom-color: #394146;
+}
+div.quiz_score span.score_value{
+  color: #FFF;
+}
+div.quiz-submission{
+  background-color: inherit;
+  border: none;
+}
+header.quiz-header{
+  border-bottom-color: #394146;
+}
+
+div.display_question{
+  background-color: inherit;
+  border-color: #394146;
+}
+div.display_question div.header{
+  background-color: #394146 !important;
+  border-bottom: 0px;
+}
+div.display_question div.answer{
+  border-top-color: #394146 !important;
+}
+
+form#submit_quiz_form div#questions{
+  background-color: inherit;
+}
+
+div.ic-Layout-contentMain div.header-bar{
+  background-color: inherit;
+  color: #FFF;
+  border-bottom-color: #394146;
+}
+div.ic-Layout-contentMain div.item-group-container{
+  background-color: #3B3F44;
+  border-color: #474C52;
+}
+div.ic-Layout-contentMain div.item-group-container div.ig-header.header,
+div.ic-Layout-contentMain div.item-group-container div.ig-header.header span.name{
+  color: #EEE;
+  text-shadow: none;
+}
+
+div.ic-Layout-contentMain div.item-group-container div.content div.ig-row{
+  background-color: #40444A;
+  border-color: #474C52;
+  color: #DDD;
+}
+div.ic-Layout-contentMain div.item-group-container div.content div.ig-row a{
+  color: #DDD !important;
+}
+div.ic-Layout-contentMain div.item-group-container div.item-group-condensed{
+  border-bottom-color: #5F656D;
+}
+.context_module i.icon-minimize{
+  color: #FD3300;
+}
+div.requirements_message .pill{
+  box-shadow: none;
+  border-color: #EEE;
+}
+div.module-item-status-icon i.icon-check{
+  color: #1BB127;
+}
+div.roster-tab.tab-panel.ui-tabs-panel.form-inline{
+   background-color: #444;
+   }
+table.ic-Table--striped td{
+   background-color: #444;
+   color: #DDD;
+}
+table.ic-Table--striped th{
+   color: #DDD;
+}
+a.ui-tabs-anchor{
+	background-color: #444;
+	color: #DDD !important;
+}
+li.static.ui-state-default.ui-corner-top.ui-tabs-active.ui-state-active{
+	border-color: #394146 !important;
+	background-color: #444;
+}
+ul.collectionViewItems.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-corner-all{
+    border-bottom-color: #394146 !important;
+}
+li.ui-state-default.ui-corner-top:hover{
+    border-color: #394146 !important;
+	background-color: #444;
+}
+tr.course-list-table-row:hover{
+  background-color: #444 !important;
+
+}
+table.ic-Table.ic-Table--bordered.course-list-table td,
+table.ic-Table.ic-Table--bordered.course-list-table th{
+  border-top-color: #394146 !important;
+  border-bottom-color: #394146 !important;
+}
+a#global_nav_courses_link{
+  background-color: #444 !important;
+}
+li.ui-state-default.ui-corner-top.ui-tabs-active.ui-state-active,
+li.ui-state-default.ui-corner-top.ui-tabs-active.ui-state-active:hover{
+  background-color: #444 !important;
+  color: #DDD !important;
+}
+div.roster-tab.tab-panel{
+  background-color: #444;
+  border-top: 50px solid #444;
+}
