@@ -59,8 +59,6 @@ div.ic-Dashboard-header__layout{
 div#DashboardOptionsMenu_Container button{
   color: #DDD;
 }
-div.
-
 div.ic-DashboardCard__header_content{
   background-color: inherit !important;
 }
@@ -300,25 +298,4 @@ ul.collectionViewItems.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-
 li.ui-state-default.ui-corner-top:hover{
     border-color: #394146 !important;
 	background-color: #444;
-}
-tr.course-list-table-row:hover{
-  background-color: #444 !important;
-
-}
-table.ic-Table.ic-Table--bordered.course-list-table td,
-table.ic-Table.ic-Table--bordered.course-list-table th{
-  border-top-color: #394146 !important;
-  border-bottom-color: #394146 !important;
-}
-a#global_nav_courses_link{
-  background-color: #444 !important;
-}
-li.ui-state-default.ui-corner-top.ui-tabs-active.ui-state-active,
-li.ui-state-default.ui-corner-top.ui-tabs-active.ui-state-active:hover{
-  background-color: #444 !important;
-  color: #DDD !important;
-}
-div.roster-tab.tab-panel{
-  background-color: #444;
-  border-top: 50px solid #444;
 }
