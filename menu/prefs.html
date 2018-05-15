@@ -49,8 +49,12 @@ limitations under the License.
         <legend>Portal</legend>
         <label><input type="checkbox" id="portalHelp" value="yes">password help link</label><br>
         <legend>Experimental</legend>
-        <label class="ex"><input type="checkbox" id="canvasDarkTheme" value="yes">Canvas dark theme</label><br>
-        <button type="submit" style="margin-top: 10px;" id="btnSave">Save Changes</button>
+        <div><label id="exText"><input type="checkbox" id="showEx" value="yes">show experimental</label></div>
+        <div id="experiment" style="display:none">
+          <label class="ex"><input type="checkbox" id="canvasDarkTheme" value="yes">Canvas dark theme</label>
+        </div>
+        <br>
+        <button type="submit" id="btnSave">Save Changes</button>
       </form>
     </div>
     <div class="bottom">

@@ -56,3 +56,8 @@ document.getElementById("opt").addEventListener("submit", function(event){
   btn.innerHTML = "Saved";
   btn.disabled = true;
 });
+
+document.getElementById('showEx').addEventListener('click', function(){
+  document.getElementById('exText').style.display = 'none';
+  document.getElementById('experiment').style.display = '';
+});
