@@ -291,13 +291,16 @@ a.ui-tabs-anchor{
 li.static.ui-state-default.ui-corner-top.ui-tabs-active.ui-state-active{
 	border-color: #394146 !important;
 	background-color: #444;
+  color: #DDD !important;
 }
 ul.collectionViewItems.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-corner-all{
     border-bottom-color: #394146 !important;
 }
+li.ui-state-default.ui-corner-top,
 li.ui-state-default.ui-corner-top:hover{
-    border-color: #394146 !important;
+  border-color: #394146 !important;
 	background-color: #444;
+  color: #DDD;
 }
 
 
@@ -317,8 +320,38 @@ li.ui-state-default.ui-corner-top.ui-tabs-active.ui-state-active,
 li.ui-state-default.ui-corner-top.ui-tabs-active.ui-state-active:hover{
   background-color: #444 !important;
   color: #DDD !important;
+  border-color: #394146 !important;
 }
 div.roster-tab.tab-panel{
   background-color: #444;
   border-top: 50px solid #444;
+}
+div.student-group-header.clearfix{
+  background-color: #444 !important;
+  color: #DDD !important;
+}
+ul.collectionViewItems.ui-tabs-nav ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-corner-all,
+ul.collectionViewItems.ui-tabs-nav ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-corner-all:hover{
+  color: #DDD !important;
+}
+div.student-group-body{
+  color: #DDD !important;
+}
+span.student-group-students{
+  color: #DDD !important;
+}
+div.student-group-title{
+  color: #DDD !important;
+}
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+    color: #DDD !important;
+}
+a[tabindex=-1]{
+  color: #DDD !important;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a{
+  color: #DDD !important;
+}
+.ui-tabs .ui-tabs-nav li a{
+  color: #DDD !important;
 }
