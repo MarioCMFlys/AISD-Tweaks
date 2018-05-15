@@ -355,3 +355,17 @@ a[tabindex=-1]{
 .ui-tabs .ui-tabs-nav li a{
   color: #DDD !important;
 }
+div.ic-Dashboard-header__layout{
+	background-color: #2C2F33 !important;
+}
+div.content.ui-tabs.ui-widget.ui-widget-content.ui-corner-all{
+	color: #444 !important;
+}
+form.submit_assignment_form.ui-tabs-panel.ui-widget-content.ui-corner-bottom{
+	background-color: #444 !important;
+	color: #DDD;
+	border-color: #394146;
+}
+ul.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-corner-all{
+	border-bottom-color: #394146 !important;
+}
