@@ -370,3 +370,22 @@ form.submit_assignment_form.ui-tabs-panel.ui-widget-content.ui-corner-bottom{
 ul.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-corner-all{
 	border-bottom-color: #394146 !important;
 }
+header.panel{
+	background-color: #2C2F33 !important;
+	color: #DDD !important;
+	border-bottom-color: #394146 !important;  
+}
+ul.messages.unstyled.collectionViewItems{
+	background-color: #2C2F33 !important;
+	color: #DDD !important;
+}
+.message-list .messages>li{
+	background-color: #2C2F33 !important;
+	color: #DDD !important;
+	border-bottom-color: #394146 !important;	
+}
+h3.subject,
+h2.author,
+div.summary{
+	color: #DDD !important;
+}
