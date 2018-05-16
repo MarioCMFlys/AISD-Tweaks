@@ -314,7 +314,7 @@ table.ic-Table.ic-Table--bordered.course-list-table th{
   border-top-color: #394146 !important;
   border-bottom-color: #394146 !important;
 }
-a#global_nav_courses_link{
+.ic-app-header__menu-list-item.ic-app-header__menu-list-item--active .ic-app-header__menu-list-link{
   background-color: #444 !important;
 }
 li.ui-state-default.ui-corner-top.ui-tabs-active.ui-state-active,
