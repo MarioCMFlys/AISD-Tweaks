@@ -39,6 +39,8 @@ defCheckbox("canvasListModules", true);
 defCheckbox("canvasPeople", true);
 // Portal
 defCheckbox("portalHelp", true);
+// Skyward
+defCheckbox("skywardGrades", true);
 // Experimental
 defCheckbox("canvasDarkTheme", false);
 
@@ -49,6 +51,8 @@ document.getElementById("opt").addEventListener("submit", function(event){
   checkSet("canvasPeople");
 
   checkSet("portalHelp");
+
+  checkSet("skywardGrades");
 
   checkSet("canvasDarkTheme");
 
