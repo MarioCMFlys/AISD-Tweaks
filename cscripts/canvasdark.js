@@ -14,8 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 **/
 
-chrome.storage.sync.get("canvasDarkTheme", function(result){
-  if(result["canvasDarkTheme"] == true){
+chrome.storage.sync.get(null, function(result){
+  if(result["canvasDarkTheme"] == true && result["mal"] != true){
     var aisdId = chrome.runtime.id;
     var aisdHead = document.getElementsByTagName("head")[0];
     var aisdDarkStyle = document.createElement("link");

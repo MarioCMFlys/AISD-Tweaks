@@ -14,54 +14,64 @@ See the License for the specific language governing permissions and
 limitations under the License.
 **/
 
-function defCheckbox(name, def){
-  chrome.storage.sync.get(name, function(result){
-
-    if(result[name] == true){
-      document.getElementById(name).checked = "checked";
-    }
-    else if(result[name] == false){}
-    else{
-      if(def == true){
+chrome.storage.sync.get(null, function(result){
+  function defCheckbox(name, def){
+      if(result[name] == true){
         document.getElementById(name).checked = "checked";
       }
-    }
+      else if(result[name] == false){}
+      else{
+        if(def == true){
+          document.getElementById(name).checked = "checked";
+        }
+      }
+  }
+  function checkSet(name){
+    value = document.getElementById(name).checked;
+    f = {};
+    f[name] = value;
+    chrome.storage.sync.set(f, function(){});
+  }
+  // Canvas
+  defCheckbox("canvasListModules", true);
+  defCheckbox("canvasPeople", true);
+  // Portal
+  defCheckbox("portalHelp", true);
+  // Skyward
+  defCheckbox("skywardGrades", true);
+  // Experimental
+  defCheckbox("canvasDarkTheme", false);
+
+  document.getElementById("opt").addEventListener("submit", function(event){
+    event.preventDefault();
+
+    checkSet("canvasListModules");
+    checkSet("canvasPeople");
+
+    checkSet("portalHelp");
+
+    checkSet("skywardGrades");
+
+    checkSet("canvasDarkTheme");
+
+    btn = document.getElementById("btnSave");
+    btn.innerHTML = "Saved";
+    btn.disabled = true;
   });
-}
-function checkSet(name){
-  value = document.getElementById(name).checked;
-  f = {};
-  f[name] = value;
-  chrome.storage.sync.set(f, function(){});
-}
-// Canvas
-defCheckbox("canvasListModules", true);
-defCheckbox("canvasPeople", true);
-// Portal
-defCheckbox("portalHelp", true);
-// Skyward
-defCheckbox("skywardGrades", true);
-// Experimental
-defCheckbox("canvasDarkTheme", false);
 
-document.getElementById("opt").addEventListener("submit", function(event){
-  event.preventDefault();
+  document.getElementById('showEx').addEventListener('click', function(){
+    document.getElementById('exText').style.display = 'none';
+    document.getElementById('experiment').style.display = '';
+  });
 
-  checkSet("canvasListModules");
-  checkSet("canvasPeople");
-
-  checkSet("portalHelp");
-
-  checkSet("skywardGrades");
-
-  checkSet("canvasDarkTheme");
-
-  btn = document.getElementById("btnSave");
-  btn.innerHTML = "Saved";
-  btn.disabled = true;
-});
-
-document.getElementById('showEx').addEventListener('click', function(){
-  document.getElementById('exText').style.display = 'none';
-  document.getElementById('experiment').style.display = '';
+  if(result["mal"] == true){
+    var mI = document.querySelectorAll('input');
+    for(var j=0;j<mI.length;j++){
+      i = mI[j];
+      i.disabled = true;
+    }
+    mB = document.getElementById("btnSave");
+    mB.innerHTML = "Saved";
+    mB.disabled = true;
+  }
 });
