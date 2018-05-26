@@ -40,13 +40,9 @@ limitations under the License.
   <body style="width: 325px;">
     <div class="main">
       <form id="opt">
-        <legend>Canva<a id="enableDevButton">s</a></legend>
-        <label><input type="checkbox" id="canvasListModules" value="yes">course list redirect to modules</label><br>
-        <label><input type="checkbox" id="canvasPeople" value="yes">course people button</label><br>
-        <legend>Portal</legend>
-        <label><input type="checkbox" id="portalHelp" value="yes">password help link</label><br>
-        <legend>Skyward</legend>
-        <label><input type="checkbox" id="skywardGrades" value="yes">label failing grades in red</label><br>
+        <legend>Experimental</legend>
+        <label class="ex"><input type="checkbox" id="canvasDarkTheme" value="yes">Canvas dark theme</label><br>
+        <label class="ex" style="padding-left: 2px"><input type="color" id="accentColor" value="#0770A3" style="height: 20px; padding: 0; border: none; background-color: #00000000; width: 16px">&nbsp;Accent color</label>
         <br>
         <button type="submit" id="btnSave">Save Changes</button>
       </form>
@@ -54,6 +50,6 @@ limitations under the License.
     <div class="bottom">
       <a href="popup.html">&lt; Go Back</a>
     </div>
-    <script type="text/javascript" src="prefs.js"></script>
+    <script type="text/javascript" src="dev.js"></script>
   </body>
 </html>

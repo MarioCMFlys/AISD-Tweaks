@@ -33,47 +33,15 @@ chrome.storage.sync.get(null, function(result){
     chrome.storage.sync.set(f, function(){});
   }
   // Canvas
-  defCheckbox("canvasListModules", true);
-  defCheckbox("canvasPeople", true);
-  // Portal
-  defCheckbox("portalHelp", true);
-  // Skyward
-  defCheckbox("skywardGrades", true);
+  defCheckbox("canvasDarkTheme", false);
 
   document.getElementById("opt").addEventListener("submit", function(event){
     event.preventDefault();
 
-    checkSet("canvasListModules");
-    checkSet("canvasPeople");
-
-    checkSet("portalHelp");
-
-    checkSet("skywardGrades");
+    checkSet("canvasDarkTheme");
 
     btn = document.getElementById("btnSave");
     btn.innerHTML = "Saved";
     btn.disabled = true;
   });
-
-  dev = document.querySelector("a#enableDevButton");
-  dev.style.cursor = "text";
-  dev.style.color = "#000000";
-  dev.style.textDecoration = "none";
-  dev.href = "#";
-  dev.addEventListener("click", function(){
-    f = {};
-    f["dev"] = true;
-    chrome.storage.sync.set(f, function(){});
-  });
-
-  if(result["mal"] == true){
-    var mI = document.querySelectorAll('input');
-    for(var j=0;j<mI.length;j++){
-      i = mI[j];
-      i.disabled = true;
-    }
-    mB = document.getElementById("btnSave");
-    mB.innerHTML = "Saved";
-    mB.disabled = true;
-  }
 });

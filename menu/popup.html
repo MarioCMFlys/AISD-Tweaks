@@ -19,50 +19,46 @@ limitations under the License.
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/menu/common.css">
     <style>
-      div.links{
-        width: 100%;
-        margin: 0px;
-        padding-left: 0px;
-      }
-      div.links a{
-        display: inline-block;
-        width: 100%;
-        margin: 0px;
-        padding: 5px;
-        border-bottom: 1px solid #AAAAAA;
-        list-style-type: none;
-        font-size: 14pt;
-        color: #555555;
-        text-decoration: none;
-        cursor: pointer;
-      }
-      div.links a:hover{
-        background-color: #E0E0E0;
-      }
       div.bottom a.r{
         position: absolute;
         right: 0;
-        margin-right: 30px;
+        margin-right: 10px;
         text-align: right;
       }
       div.bottom a.r img.x{
         height: 15px;
       }
+      div.buttons{
+        padding: 25px;
+      }
+      div.buttons a{
+        display: inline-block;
+        text-decoration: none;
+        color: #000000;
+        border: 1px solid #00000000;
+        width: 83px;
+        height: 83px;
+        margin: 8px 2px 8px 2px;
+        text-align: center;
+      }
+      div.buttons a:hover{
+        border-color: #DDD;
+      }
+      div.buttons a img{
+        padding: 7px;
+        width: 48px;
+        height: 48px;
+        display: inline-block;
+      }
     </style>
   </head>
-  <body style="width: 300px; height: 400px;">
-    <div class="header">
-      <table><tr><td><img class="header-logo" src="/images/menu-logo.png"></td><td style="padding-left: 5px;"><h3>AISD Tweaks</h3><small>Quick Links</small></td></tr></table>
-    </div>
-    <div class="links">
-      <a href="https://portal.allenisd.org/" target="_blank">Portal</a>
-      <a href="https://canvas.allenisd.org/" target="_blank">Canvas</a>
-      <a href="https://skyward.allenisd.org/" target="_blank">Skyward</a>
-      <a href="https://drive.google.com/" target="_blank">Google Drive</a>
-      <a href="https://mail.google.com/" target="_blank">E-Mail</a>
-      <a href="https://montage.allenisd.org" target="_blank">Safari Montage</a>
-      <a href="https://password.allenisd.org/" target="_blank">Password Management</a>
-
+  <body style="width: 325px;">
+    <div class="buttons">
+      <a href="https://canvas.allenisd.org/" target="_blank"><img src="/images/app-canvas.png"><br>Canvas</a>
+      <a href="https://skyward.allenisd.org/" target="_blank"><img src="/images/app-skyward.png"><br>Skyward</a>
+      <a href="https://drive.google.com/" target="_blank"><img src="/images/app-drive.png"><br>Google Drive</a>
+      <a href="https://mail.google.com/" target="_blank"><img src="/images/app-gmail.png"><br>Gmail</a>
+      <a href="https://montage.allenisd.org/" target="_blank"><img src="/images/app-montage.png"><br>Montage</a>
     </div>
     <div class="bottom">
       <a href="about.html">About</a>

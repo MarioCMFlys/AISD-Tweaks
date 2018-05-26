@@ -33,8 +33,6 @@ img.header-logo{
   margin-bottom: 5px;
 }
 div.bottom{
-  position: absolute;
-  bottom: 0;
   background-color: #EEEEEE;
   width: 100%;
   padding: 10px;

@@ -15,3 +15,12 @@ limitations under the License.
 **/
 
 var links = document.querySelectorAll("ul.links li");
+
+chrome.storage.sync.get(null, function(result){
+  if(result["dev"] == true){
+    v = document.createElement('a');
+    v.href = "dev.html";
+    v.innerHTML = '<img src="/images/app-mgmt.png"><br>Developer';
+    document.querySelector("div.buttons").appendChild(v);
+  }
+});
