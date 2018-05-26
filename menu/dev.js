@@ -33,12 +33,14 @@ chrome.storage.sync.get(null, function(result){
     chrome.storage.sync.set(f, function(){});
   }
   defCheckbox("dev", false);
+  defCheckbox("mal", false);
   defCheckbox("canvasDarkTheme", false);
 
   document.getElementById("opt").addEventListener("submit", function(event){
     event.preventDefault();
 
     checkSet("dev");
+    checkSet("mal");
     checkSet("canvasDarkTheme");
 
     btn = document.getElementById("btnSave");
