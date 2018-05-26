@@ -32,12 +32,13 @@ chrome.storage.sync.get(null, function(result){
     f[name] = value;
     chrome.storage.sync.set(f, function(){});
   }
-  // Canvas
+  defCheckbox("dev", false);
   defCheckbox("canvasDarkTheme", false);
 
   document.getElementById("opt").addEventListener("submit", function(event){
     event.preventDefault();
 
+    checkSet("dev");
     checkSet("canvasDarkTheme");
 
     btn = document.getElementById("btnSave");
