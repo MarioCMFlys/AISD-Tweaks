@@ -6,7 +6,8 @@
   "description": "Useful tweaks for canvas and other AISD stuff",
   "permissions":[
     "declarativeContent",
-    "storage"
+    "storage",
+    "activeTab"
   ],
   "icons":{
     "16": "images/icon16.png",

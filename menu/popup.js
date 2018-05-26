@@ -23,4 +23,34 @@ chrome.storage.sync.get(null, function(result){
     v.innerHTML = '<img src="/images/app-mgmt.png"><br>Developer';
     document.querySelector("div.buttons").appendChild(v);
   }
+  if(result["citrix"] == true){
+    v = document.createElement('a');
+    v.href = "https://citrix.allenisd.org";
+    v.target = "_blank";
+    v.innerHTML = '<img src="/images/app-citrix.png"><br>Citrix';
+    document.querySelector("div.buttons").appendChild(v);
+  }
+  else{
+    chrome.tabs.query({active:true,lastFocusedWindow:true}, function(tabs){
+      tab = tabs[0];
+      if(tab.url.startsWith("https://citrix.allenisd.org")){
+        v = document.createElement('a');
+        v.href = "#";
+        v.id = "suggested";
+        v.innerHTML = '<table><tr><td><img src="/images/app-citrix.png"></td><td><h4>Click to add Citrix</h4><p>Suggestion</p></td></tr></table>';
+        v.addEventListener('click', function(){
+          v = document.createElement('a');
+          v.href = "https://citrix.allenisd.org/";
+          v.target = "_blank";
+          v.innerHTML = '<img src="/images/app-citrix.png"><br>Citrix';
+          document.querySelector("div.buttons").appendChild(v);
+          document.querySelector("#suggested").style.display = "none";
+          f = {};
+          f["citrix"] = true;
+          chrome.storage.sync.set(f, function(){});
+        });
+        document.querySelector("div.buttons").insertBefore(v, document.querySelector("div.buttons").childNodes[0]);
+      }
+    });
+  }
 });
