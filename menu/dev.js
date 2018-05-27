@@ -34,6 +34,9 @@ chrome.storage.sync.get(null, function(result){
   }
   defCheckbox("dev", false);
   defCheckbox("mal", false);
+  defCheckbox("citrix", false);
+  defCheckbox("erma", false);
+  defCheckbox("eduphoria", false);
   defCheckbox("canvasDarkTheme", false);
 
   document.getElementById("opt").addEventListener("submit", function(event){
@@ -41,6 +44,9 @@ chrome.storage.sync.get(null, function(result){
 
     checkSet("dev");
     checkSet("mal");
+    checkSet("citrix");
+    checkSet("erma");
+    checkSet("eduphoria");
     checkSet("canvasDarkTheme");
 
     btn = document.getElementById("btnSave");

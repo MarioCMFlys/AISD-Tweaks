@@ -14,44 +14,97 @@ See the License for the specific language governing permissions and
 limitations under the License.
 **/
 
-var links = document.querySelectorAll("ul.links li");
+var links = document.querySelector("div.buttons");
+
+function createLink(label, image, location, blank){
+  v = document.createElement('a');
+  v.href = location;
+  if(blank) v.target = "_blank";
+  v.innerHTML = '<img src="'+image+'"><br>'+label;
+  return v;
+}
+function createSuggestion(app, image){
+  v = document.createElement('a');
+  v.href = "#";
+  v.id = "suggested";
+  v.innerHTML = '<table><tr><td><img src="'+image+'"></td><td><h4>Click to add '+app+'</h4><p>Suggestion</p></td></tr></table>';
+  return v;
+}
 
 chrome.storage.sync.get(null, function(result){
+  btnDev = null;
   if(result["dev"] == true){
-    btnDev = document.createElement('a');
-    btnDev.href = "dev.html";
-    btnDev.innerHTML = '<img src="/images/app-mgmt.png"><br>Developer';
+    btnDev = createLink("Developer", "/images/app-mgmt.png", "dev.html", false);
   }
+
+  // Citrix
   if(result["citrix"] == true){
-    v = document.createElement('a');
-    v.href = "https://citrix.allenisd.org";
-    v.target = "_blank";
-    v.innerHTML = '<img src="/images/app-citrix.png"><br>Citrix';
-    document.querySelector("div.buttons").appendChild(v);
+    v = createLink("Citrix", "/images/app-citrix.png", "https://citrix.allenisd.org", true);
+    links.appendChild(v);
   }
   else{
     chrome.tabs.query({active:true,lastFocusedWindow:true}, function(tabs){
       tab = tabs[0];
       if(tab.url.startsWith("https://citrix.allenisd.org")){
-        v = document.createElement('a');
-        v.href = "#";
-        v.id = "suggested";
-        v.innerHTML = '<table><tr><td><img src="/images/app-citrix.png"></td><td><h4>Click to add Citrix</h4><p>Suggestion</p></td></tr></table>';
+        v = createSuggestion("Citrix", "/images/app-citrix.png");
         v.addEventListener('click', function(){
-          v = document.createElement('a');
-          v.href = "https://citrix.allenisd.org/";
-          v.target = "_blank";
-          v.innerHTML = '<img src="/images/app-citrix.png"><br>Citrix';
-          document.querySelector("div.buttons").appendChild(v);
+          v = createLink("Citrix", "/images/app-citrix.png", "https://citrix.allenisd.org", true);
+          links.appendChild(v);
           document.querySelector("#suggested").style.display = "none";
           f = {};
           f["citrix"] = true;
           chrome.storage.sync.set(f, function(){});
         });
-        document.querySelector("div.buttons").insertBefore(v, document.querySelector("div.buttons").childNodes[0]);
+        links.insertBefore(v, links.childNodes[0]);
       }
     });
   }
 
-  document.querySelector("div.buttons").appendChild(btnDev);
+  // ERMA
+  if(result["erma"] == true){
+    v = createLink("ERMA", "/images/app-erma.png", "https://erma.allenisd.org", true);
+    links.appendChild(v);
+  }
+  else{
+    chrome.tabs.query({active:true,lastFocusedWindow:true}, function(tabs){
+      tab = tabs[0];
+      if(tab.url.startsWith("https://erma.allenisd.org")){
+        v = createSuggestion("ERMA", "/images/app-erma.png");
+        v.addEventListener('click', function(){
+          v = createLink("ERMA", "/images/app-erma.png", "https://erma.allenisd.org", true);
+          links.appendChild(v);
+          document.querySelector("#suggested").style.display = "none";
+          f = {};
+          f["erma"] = true;
+          chrome.storage.sync.set(f, function(){});
+        });
+        links.insertBefore(v, links.childNodes[0]);
+      }
+    });
+  }
+
+  // Eduphoria
+  if(result["eduphoria"] == true){
+    v = createLink("Eduphoria", "/images/app-eduphoria.png", "https://eduphoria.allenisd.org", true);
+    links.appendChild(v);
+  }
+  else{
+    chrome.tabs.query({active:true,lastFocusedWindow:true}, function(tabs){
+      tab = tabs[0];
+      if(tab.url.startsWith("https://eduphoria.allenisd.org")){
+        v = createSuggestion("Eduphoria", "/images/app-eduphoria.png");
+        v.addEventListener('click', function(){
+          v = createLink("Eduphoria", "/images/app-eduphoria.png", "https://eduphoria.allenisd.org", true);
+          links.appendChild(v);
+          document.querySelector("#suggested").style.display = "none";
+          f = {};
+          f["eduphoria"] = true;
+          chrome.storage.sync.set(f, function(){});
+        });
+        links.insertBefore(v, links.childNodes[0]);
+      }
+    });
+  }
+
+  if(btnDev != null) links.appendChild(btnDev);
 });
