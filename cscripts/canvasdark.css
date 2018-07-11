@@ -400,3 +400,15 @@ button._922amOO._16-3B-L.AIqd8V_{
 	background-color: #444 !important;
 	color: #DDD !important;
 }
+
+
+#unauthorized_message{
+  /*border-color: #394146 !important;*/
+  border-color: #C43C35 !important;
+}
+#unauthorized_message .ui-state-error{
+  /*background-color: #C43C35 !important;*/
+  background-image: none;
+  box-shadow: none !important;
+  border: 0 !important;
+}
