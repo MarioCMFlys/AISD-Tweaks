@@ -30,26 +30,30 @@ header.ic-app-header{
 div.ic-app-header__logomark-container{
   background-color: inherit;
 }
-div#main > span > span{
+div#nav-tray-portal > span > span{
   background-color: #23272A !important;
 }
-div#main > span > span > span > div.tray-with-space-for-global-nav > div h2{
+div#nav-tray-portal > span > span > span > div.tray-with-space-for-global-nav > div h2{
   color: #DDDDDD;
 }
-div#main > span > span > span > div.tray-with-space-for-global-nav > div hr{
+div#nav-tray-portal > span > span > span > div.tray-with-space-for-global-nav > div hr{
   border-color: #394146 !important;
 }
-div#main > span > span > span > div.tray-with-space-for-global-nav > div > ul > li > span > a{
+div#nav-tray-portal > span > span > span > div.tray-with-space-for-global-nav > div > ul > li > span > a{
   color: var(--ic-link-color);
 }
-div#main > span > span > span > div.tray-with-space-for-global-nav > div > ul > li > span > a:hover{
+div#nav-tray-portal > span > span > span > div.tray-with-space-for-global-nav > div > ul > li > span > a:hover{
   color: var(--ic-link-color-darkened-10);
 }
-div#main > span > span > span > div.tray-with-space-for-global-nav > div > ul > li > div{
+div#nav-tray-portal > span > span > span > div.tray-with-space-for-global-nav > div > ul > li > div{
   color: #AAAAAA;
 }
-div#main > span > span > span > div.tray-with-space-for-global-nav > div span{
+div#nav-tray-portal > span > span > span > div.tray-with-space-for-global-nav > div span{
   color: #BBBBBB;
+}
+
+div.ic-notification .ic-notification__content{
+  background-color: #2C2F33 !important;
 }
 
 div.ic-Dashboard-header__layout{
@@ -396,9 +400,10 @@ h2.author,
 div.summary{
 	color: #DDD !important;
 }
-button._922amOO._16-3B-L.AIqd8V_{
-	background-color: #444 !important;
+form[action="/logout"] button{
+	background-color: #171A1C !important;
 	color: #DDD !important;
+  border: 0 !important;
 }
 
 
