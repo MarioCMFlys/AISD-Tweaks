@@ -105,6 +105,9 @@ a.icon-calendar-day::before{
   background-color: #23272A;
   border-color: #1E2224;
 }
+.btn.btn-success{
+  background: #127A1B !important;
+}
 
 
 .paginatedLoadingIndicator{
@@ -386,6 +389,12 @@ header.panel{
 	color: #DDD !important;
 	border-bottom-color: #394146 !important;
 }
+footer.ic-app-footer{
+  border-top-color: #394146 !important;
+}
+footer.ic-app-footer a{
+  color: #394146 !important;
+}
 ul.messages.unstyled.collectionViewItems{
 	background-color: #2C2F33 !important;
 	color: #DDD !important;
@@ -416,4 +425,61 @@ form[action="/logout"] button{
   background-image: none;
   box-shadow: none !important;
   border: 0 !important;
+}
+
+
+.profile_table .data_description{
+  color: #AAA !important;
+}
+ul#registered_services li.service:hover{
+  background-color: #23272A !important;
+}
+table#access_tokens *{
+  background-color: inherit !important;
+}
+ul.feature-flags.collectionViewItems{
+  color: #DDD !important;
+}
+ul.feature-flags span.element_toggler i{
+  color: #DDD !important;
+}
+table tbody tr th p.email_channel.contact_channel_path{
+  color: #DDD !important;
+}
+
+
+div.alert.alert-info{
+  background-color: var(--ic-brand-primary) !important;
+  color: #FFF !important;
+}
+div.alert.alert-danger{
+  background-color: #BF4949;
+  color: #FFF;
+  border: 1px solid #9C3131;
+}
+
+
+div.toolbarView, div.toolbarView div.headerBar{
+  background-color: inherit !important;
+  border-color: #394146 !important;
+}
+div#discussion_container div.entry-content{
+  border-left-color: #394146 !important;
+  border-right-color: #394146 !important;
+}
+div#discussion_container article#discussion_topic div.alert-info span.discussion-points{
+  color: #FFFA !important;
+}
+div#discussion_container article#discussion_topic div.alert-info div.discussion-pubdate{
+  color: #FFFA !important;
+}
+li.entry, li.entry article.discussion_entry{
+  background: transparent !important;
+  border-color: #394146 !important;
+}
+li.entry, li.entry article.discussion_entry div.discussion-pubdate time span{
+  color: #AAA !important;
+}
+li.entry, li.entry article.discussion_entry div.discussion-section{
+  color: #DDD !important;
 }
