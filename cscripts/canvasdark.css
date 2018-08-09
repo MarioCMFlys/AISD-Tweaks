@@ -499,3 +499,33 @@ li.entry, li.entry article.discussion_entry div.discussion-pubdate time span{
 li.entry, li.entry article.discussion_entry div.discussion-section{
   color: #DDD !important;
 }
+
+
+/* Canvas Calendar */
+table tbody.fc-body{
+  background-color: transparent !important;
+}
+table tbody.fc-body td, .fc-widget-header{
+  border-color: #394146 !important;
+}
+.fc-widget-header{
+  color: #DDD !important;
+}
+div#minical.fc{
+  background-color: transparent !important;
+}
+div#minical.fc .fc-toolbar{
+  color: #DDD !important;
+}
+#calendar-app .fc-month-view .fc-today, #calendar-drag-and-drop-container .fc-month-view .fc-today{
+  background-color: transparent !important;
+}
+div#context-list-holder, #undated-events{
+  background-color: transparent !important;
+}
+#context-list .context_list_context:hover{
+  background-color: transparent !important;
+}
+div#context-list-holder, #undated-events button{
+  background-color: transparent !important;
+}
