@@ -427,6 +427,18 @@ form[action="/logout"] button{
   border: 0 !important;
 }
 
+thead{
+  background-color: transparent !important;
+}
+thead th{
+  background-color: transparent !important;
+}
+span._1clzBoF{
+  color: #DDD;
+}
+table.notification-prefs-table,table.notification-prefs-table td, table.notification-prefs-table th{
+  border-color: #394146 !important;
+}
 
 .profile_table .data_description{
   color: #AAA !important;
