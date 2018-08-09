@@ -446,7 +446,11 @@ ul.feature-flags span.element_toggler i{
 table tbody tr th p.email_channel.contact_channel_path{
   color: #DDD !important;
 }
-
+div#pairing-code button{
+  background-color: #23272A !important;
+  border-color: #1E2224;
+  color: #DDD;
+}
 
 div.alert.alert-info{
   background-color: var(--ic-brand-primary) !important;
