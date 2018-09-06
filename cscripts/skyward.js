@@ -14,9 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 **/
 
-if(window.location.pathname == "/scripts/wsisa.dll/WService=wsEAplus/sfgradebook001.w"){
-  chrome.storage.sync.get("null", function(result){
-    if(result["mal"] != true){
+chrome.storage.sync.get("null", function(result){
+  if(result["mal"] != true){
+    if(window.location.pathname == "/scripts/wsisa.dll/WService=wsEAplus/sfgradebook001.w"){
       if(result["skywardGrades"] == true || result["skywardGrades"] != false){
         var aisdGrd = document.querySelectorAll('a[name="showGradeInfo"]');
         for(j = 0; j < aisdGrd.length; j++){
@@ -27,5 +27,14 @@ if(window.location.pathname == "/scripts/wsisa.dll/WService=wsEAplus/sfgradebook
         }
       }
     }
-  });
-}
+
+    if(result["skywardTab"] == true || result["skywardTab"] != false){
+      var aisdDoc = document.createElement("script");
+      aisdDoc.innerHTML = `var aisdOldOpen = window.open;
+      window.open = function(url, name, specs, replace){
+        return aisdOldOpen(url, name, "", true);
+      };`;
+      document.head.appendChild(aisdDoc);
+    }
+  }
+});

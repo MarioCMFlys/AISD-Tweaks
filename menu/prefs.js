@@ -37,6 +37,7 @@ chrome.storage.sync.get(null, function(result){
   defCheckbox("canvasPeople", true);
   // Skyward
   defCheckbox("skywardGrades", true);
+  defCheckbox("skywardTab", true);
 
   document.getElementById("opt").addEventListener("submit", function(event){
     event.preventDefault();
@@ -45,6 +46,7 @@ chrome.storage.sync.get(null, function(result){
     checkSet("canvasPeople");
 
     checkSet("skywardGrades");
+    checkSet("skywardTab");
 
     btn = document.getElementById("btnSave");
     btn.innerHTML = "Saved";
