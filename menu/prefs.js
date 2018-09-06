@@ -35,8 +35,6 @@ chrome.storage.sync.get(null, function(result){
   // Canvas
   defCheckbox("canvasListModules", true);
   defCheckbox("canvasPeople", true);
-  // Portal
-  defCheckbox("portalHelp", true);
   // Skyward
   defCheckbox("skywardGrades", true);
 
@@ -45,8 +43,6 @@ chrome.storage.sync.get(null, function(result){
 
     checkSet("canvasListModules");
     checkSet("canvasPeople");
-
-    checkSet("portalHelp");
 
     checkSet("skywardGrades");
 
