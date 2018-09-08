@@ -14,6 +14,18 @@ See the License for the specific language governing permissions and
 limitations under the License.
 **/
 
+chrome.storage.sync.get(null, function(result){
+  if(result["canvasDarkTheme"] == true && result["mal"] != true){
+    var aisdId = chrome.runtime.id;
+    var aisdHead = document.getElementsByTagName("head")[0];
+    var aisdDarkStyle = document.createElement("link");
+    aisdDarkStyle.href = "chrome-extension://"+aisdId+"/cscripts/canvasdark.css";
+    aisdDarkStyle.rel = "stylesheet";
+    aisdHead.appendChild(aisdDarkStyle);
+  }
+});
+
+
 window.addEventListener("load", function(){
 
   chrome.storage.sync.get(null, function(result){

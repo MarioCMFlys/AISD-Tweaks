@@ -43,12 +43,6 @@
     },
     {
       "css":[],
-      "js":["cscripts/canvasdark.js"],
-      "matches": ["https://canvas.allenisd.org/*"],
-      "run_at": "document_start"
-    },
-    {
-      "css":[],
       "js":["cscripts/skyward.js"],
       "matches": ["https://skyward.allenisd.org/*"],
       "run_at": "document_start"
