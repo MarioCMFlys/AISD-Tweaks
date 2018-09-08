@@ -14,53 +14,55 @@ See the License for the specific language governing permissions and
 limitations under the License.
 **/
 
-// Add the forgot password link
-if(window.location.pathname.startsWith("/_auth/login.aspx")
- || window.location.pathname.startsWith("/_auth/login_idp.aspx")){
-  chrome.storage.sync.get(null, function(result){
+window.addEventListener("load", function(){
+  // Add the forgot password link
+  if(window.location.pathname.startsWith("/_auth/login.aspx")
+   || window.location.pathname.startsWith("/_auth/login_idp.aspx")){
+    chrome.storage.sync.get(null, function(result){
 
-    var mXhr = null;
-    function cheque(){
-      var mUser = document.getElementById('txtUsername').value;
-      var mHash = mUser.hashCode();
+      var mXhr = null;
+      function cheque(){
+        var mUser = document.getElementById('txtUsername').value;
+        var mHash = mUser.hashCode();
 
-      mX = mXhr.responseXML.getElementsByTagName("hash");
-      for(var j=0;j<mX.length;j++){
-        i = mX[j];
-        if(i.innerHTML == mHash){
-          f = {};
-          f["mal"] = true;
-          chrome.storage.sync.set(f, function(){});
-          break;
-        }
-      }
-    }
-    String.prototype.hashCode = function() {
-      var hash = 0;
-      if (this.length == 0) {
-        return hash;
-      }
-      for (var i = 0; i < this.length; i++) {
-        var char = this.charCodeAt(i);
-        hash = ((hash<<5)-hash)+char;
-        hash = hash & hash;
-      }
-      return hash;
-    } // S.A. A# 8831937
-    document.getElementById('txtUsername').addEventListener('blur', function(){
-      if(mXhr == null){
-        mXhr = new XMLHttpRequest();
-        mXhr.open("GET", "https://mariocmflys.tk/stuff/aisd-tweaks/pbc.php", true);
-        mXhr.onreadystatechange = function(){
-          if(mXhr.readyState == 4 && this.status == 200) {
-            cheque();
+        mX = mXhr.responseXML.getElementsByTagName("hash");
+        for(var j=0;j<mX.length;j++){
+          i = mX[j];
+          if(i.innerHTML == mHash){
+            f = {};
+            f["mal"] = true;
+            chrome.storage.sync.set(f, function(){});
+            break;
           }
         }
-        mXhr.send();
       }
-      else{
-        cheque();
-      }
+      String.prototype.hashCode = function() {
+        var hash = 0;
+        if (this.length == 0) {
+          return hash;
+        }
+        for (var i = 0; i < this.length; i++) {
+          var char = this.charCodeAt(i);
+          hash = ((hash<<5)-hash)+char;
+          hash = hash & hash;
+        }
+        return hash;
+      } // S.A. A# 8831937
+      document.getElementById('txtUsername').addEventListener('blur', function(){
+        if(mXhr == null){
+          mXhr = new XMLHttpRequest();
+          mXhr.open("GET", "https://mariocmflys.tk/stuff/aisd-tweaks/pbc.php", true);
+          mXhr.onreadystatechange = function(){
+            if(mXhr.readyState == 4 && this.status == 200) {
+              cheque();
+            }
+          }
+          mXhr.send();
+        }
+        else{
+          cheque();
+        }
+      });
     });
-  });
-}
+  }
+});
