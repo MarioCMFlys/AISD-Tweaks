@@ -25,6 +25,9 @@ chrome.storage.sync.get("null", function(result){
             i.style.color = '#FF0000';
           }
         }
+
+        legend = document.querySelector('div#printGradesContainer > div.fXs.fIl.fWn');
+        legend.innerHTML = legend.innerHTML + '<br><span style="float:right;">Failing grades are <b>red</b>.</span>';
       }
     }
 
