@@ -14,16 +14,79 @@ See the License for the specific language governing permissions and
 limitations under the License.
 **/
 
+var aisdId = chrome.runtime.id;
+
+function generateTestPage(){
+  console.log("[AT] generating test page");
+  document.querySelector("#testPageGenCheck").classList.remove("btn-default");
+  document.querySelector("#testPageGenCheck").classList.add("btn-success");
+  content = document.querySelector("#content");
+  document.querySelector("ul#section-tabs").innerHTML = document.querySelector("ul#section-tabs").innerHTML + '<p style="color: rgb(98, 102, 106); font-size: 9pt; margin-top: 20px; margin-bottom: 0px; margin-left: 5px;">TEST PAGE</p><li class="section"><a href="" class="" tabindex="0" title="Section">Section</a></li><li class="section"><a href="" class="active" tabindex="0" title="Selected">Selected</a></li>';
+  content.innerHTML = `<!-- test page body -->
+<div id="assignment_show" class="assignment content_underline_links">
+<div class="assignment-title"><h1 class="title">AISD-TWEAKS Stylesheet Test Page</h1></div>
+<ul class="student-assignment-overview">
+<li><span class="title">Title 1</span><span class="value">value</span></li>
+<li><span class="title">Title 2</span><span class="value">another value</span></li>
+<li><span class="title">Title 3</span><span class="value">yet another value</span></li>
+</ul>
+<div class="description user_content student-version enhanced">
+<p>This page is a test page. <strong>strong</strong> <b>bold</b> <i>italics</i> <sub>subscript</sub> <sup>superscript</sup></p>
+<p><span class="instructure_file_holder link_holder"><a class="instructure_file_link" title="Title" href="">File download link</a><a class="file_preview_link" aria-hidden="true" href="" title="Preview the document" style="padding-left: 5px;"><img src="/images/preview.png" alt="Preview the document"></a></span></p>
+<p>The line below is an HR divider</p>
+<hr>
+<p>Click <a href="#aisdTestPage" onclick="document.querySelector('link#aisdDarkStyle').href='';document.querySelector('link#aisdDarkStyle').href='chrome-extension://`+aisdId+`/cscripts/canvasdark.css';">this link</a> to reload the dark theme</p>
+<p>Time for some buttons</p>
+<button class="btn btn-default">Default</button><button class="btn btn-primary">Primary</button><button class="btn btn-success">Success</button><button class="btn btn-warning">Warning</button><button class="btn btn-danger">Danger</button>
+<p>how about a table</p>
+<table>
+<tbody>
+<tr><th>Head</th><th>Another</th></tr>
+<tr><td>Row 1</td><td>Row 1 column 2</td></tr>
+<tr><td>Row 2</td><td>Row 2 column 2</td></tr>
+</tbody>
+</table>
+<hr>
+<div class="alert"><p>Default alert</div><br>
+<div class="alert alert-info"><p>Info alert</div><br>
+<div class="alert alert-success"><p>Success alert</div><br>
+<div class="alert alert-warning"><p>Warning alert</div><br>
+<div class="alert alert-danger"><p>Danger alert</div><br>
+</div>
+</div>
+<!-- end test page body -->`;
+}
+
 chrome.storage.sync.get(null, function(result){
   if(result["canvasDarkTheme"] == true && result["mal"] != true){
-    var aisdId = chrome.runtime.id;
     var aisdHead = document.getElementsByTagName("head")[0];
     var aisdDarkStyle = document.createElement("link");
     aisdDarkStyle.href = "chrome-extension://"+aisdId+"/cscripts/canvasdark.css";
+    aisdDarkStyle.id = "aisdDarkStyle";
     aisdDarkStyle.rel = "stylesheet";
     aisdHead.appendChild(aisdDarkStyle);
   }
   window.addEventListener("load", function(){
+    if(result["canvasTestPage"] == true && window.location.href.indexOf("assignments") > -1){
+      nav = document.querySelector("div.ic-app-nav-toggle-and-crumbs");
+      vclass = "btn btn-default";
+      endVFunc = function(){
+        window.location.hash = "";
+        location.reload();
+      }
+      vfunc = function(){
+        window.location.hash = "#aisdTestPage";
+        generateTestPage();
+        document.querySelector("#testPageGenCheck").addEventListener("click", endVFunc);
+      }
+      if(window.location.hash == "#aisdTestPage"){vclass = "btn btn-primary"; vfunc = endVFunc;}
+      nav.innerHTML = nav.innerHTML + '<div style="float: right;"><button id="testPageGenCheck" class="'+vclass+'" title="Generate ATWEAKS style testing page"><i class="icon-assignment"></i></button></div>';
+      document.querySelector("#testPageGenCheck").addEventListener("click", vfunc);
+    }
+    if(window.location.hash == "#aisdTestPage"){
+      generateTestPage();
+    }
+
     if(result["mal"] != true){
       // Edit the dashboard cards
       if(window.location.pathname == "/"){
