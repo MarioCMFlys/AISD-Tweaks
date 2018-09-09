@@ -99,6 +99,11 @@ div.event-details::after{
 a.icon-calendar-day::before{
   color: #656565;
 }
+
+#right-side .h2{
+  border-bottom: 1px solid #394146 !important;
+}
+
 .btn, .Button, .ui-button{
   color: #DDDDDD;
 }
@@ -125,6 +130,15 @@ div.Sidebar__TodoListContainer > div > ul > li{
   color: #808080 !important;
 }
 div.Sidebar__TodoListContainer > div > ul > li a{
+  color: var(--ic-link-color) !important;
+}
+div.Sidebar__TodoListContainer > div > ul > li ul li span{
+  color: #808080 !important;
+}
+div.Sidebar__TodoListContainer > div > ul > li svg{
+  color: #808080 !important;
+}
+div.Sidebar__TodoListContainer > div > div > button{
   color: var(--ic-link-color) !important;
 }
 
@@ -394,9 +408,6 @@ a[tabindex=-1]{
 }
 .ui-tabs .ui-tabs-nav li a{
   color: #DDD !important;
-}
-div.ic-Dashboard-header__layout{
-	background-color: #2C2F33 !important;
 }
 div.content.ui-tabs.ui-widget.ui-widget-content.ui-corner-all{
 	color: #444 !important;

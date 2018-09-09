@@ -52,6 +52,11 @@ function generateTestPage(){
 <div class="alert alert-success"><p>Success alert</div><br>
 <div class="alert alert-warning"><p>Warning alert</div><br>
 <div class="alert alert-danger"><p>Danger alert</div><br>
+<hr>
+
+<select><option selected>Selected</option><option>Option</option></select><br>
+<input type="text" placeholder="Text input"></input>
+
 </div>
 </div>
 <!-- end test page body -->`;
