@@ -106,8 +106,17 @@ a.icon-calendar-day::before{
   background-color: #23272A;
   border-color: #1E2224;
 }
+.btn.btn-primary{
+  background: var(--ic-brand-primary) !important;
+}
 .btn.btn-success{
   background: #127A1B !important;
+}
+.btn.btn-warning{
+  background: #C8562D !important;
+}
+.btn.btn-danger{
+  background: #BF4949 !important;
 }
 
 
@@ -483,18 +492,20 @@ div#pairing-code button{
 /* Generic alert boxes */
 div.alert.alert-info{
   background-color: var(--ic-brand-primary) !important;
-  color: #FFF !important;
   border: 1px solid #0770A3 !important;
 }
 div.alert.alert-success{
   background-color: #127A1B !important;
-  color: #FFF !important;
   border: 1px solid #127A1B !important;
 }
-div.alert, div.alert.alert-danger{
-  background-color: #BF4949;
+div.alert, div.alert.alert-warning{
+  background-color: #C8562D;
   color: #FFF;
-  border: 1px solid #9C3131;
+  border: 1px solid #C8562D;
+}
+div.alert.alert-danger{
+  background-color: #BF4949 !important;
+  border: 1px solid #9C3131 !important;
 }
 
 
