@@ -23,12 +23,7 @@ chrome.storage.sync.get(null, function(result){
     aisdDarkStyle.rel = "stylesheet";
     aisdHead.appendChild(aisdDarkStyle);
   }
-});
-
-
-window.addEventListener("load", function(){
-
-  chrome.storage.sync.get(null, function(result){
+  window.addEventListener("load", function(){
     if(result["mal"] != true){
       // Edit the dashboard cards
       if(window.location.pathname == "/"){
@@ -97,5 +92,4 @@ window.addEventListener("load", function(){
       }
     }
   });
-
 });
