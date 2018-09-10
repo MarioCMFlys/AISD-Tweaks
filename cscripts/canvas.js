@@ -14,8 +14,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 **/
 
-var aisdId = chrome.runtime.id;
-
 function generateTestPage(){
   console.log("[AT] generating test page");
   document.querySelector("#testPageGenCheck").classList.remove("btn-default");
@@ -35,7 +33,7 @@ function generateTestPage(){
 <p><span class="instructure_file_holder link_holder"><a class="instructure_file_link" title="Title" href="">File download link</a><a class="file_preview_link" aria-hidden="true" href="" title="Preview the document" style="padding-left: 5px;"><img src="/images/preview.png" alt="Preview the document"></a></span></p>
 <p>The line below is an HR divider</p>
 <hr>
-<p>Click <a href="#aisdTestPage" onclick="document.querySelector('link#aisdDarkStyle').href='';document.querySelector('link#aisdDarkStyle').href='chrome-extension://`+aisdId+`/cscripts/canvasdark.css';">this link</a> to reload the dark theme</p>
+<p>Click <a href="#aisdTestPage" onclick="document.querySelector('link#aisdDarkStyle').href='';document.querySelector('link#aisdDarkStyle').href='`+chrome.extension.getURL('./cscripts/canvasdark.css')+`';">this link</a> to reload the dark theme</p>
 <p>Time for some buttons</p>
 <button class="btn btn-default">Default</button><button class="btn btn-primary">Primary</button><button class="btn btn-success">Success</button><button class="btn btn-warning">Warning</button><button class="btn btn-danger">Danger</button>
 <p>how about a table</p>
@@ -66,7 +64,7 @@ chrome.storage.sync.get(null, function(result){
   if(result["canvasDarkTheme"] == true && result["mal"] != true){
     var aisdHead = document.getElementsByTagName("head")[0];
     var aisdDarkStyle = document.createElement("link");
-    aisdDarkStyle.href = "chrome-extension://"+aisdId+"/cscripts/canvasdark.css";
+    aisdDarkStyle.href = chrome.extension.getURL('./cscripts/canvasdark.css');
     aisdDarkStyle.id = "aisdDarkStyle";
     aisdDarkStyle.rel = "stylesheet";
     aisdHead.appendChild(aisdDarkStyle);
