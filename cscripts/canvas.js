@@ -14,6 +14,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 **/
 
+function getResource(url){
+  if(!!window.chrome && !!window.chrome.webstore){ // chrome
+    return "chrome-extension://"+chrome.runtime.id+"/"+url;
+  }
+  else{ // firefox
+    return chrome.extension.getURL('./'+url);
+  }
+}
+
 function generateTestPage(){
   console.log("[AT] generating test page");
   document.querySelector("#testPageGenCheck").classList.remove("btn-default");
