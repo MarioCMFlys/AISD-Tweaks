@@ -250,6 +250,12 @@ aside#right-side div.details div.header{
 aside#right-side div.details div.module a i.icon-rubric{
   color: #999;
 }
+div.ig-row.student-view{
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
 
 
 aside#right-side table.summary th,
@@ -574,4 +580,7 @@ div#context-list-holder, #undated-events{
 }
 div#context-list-holder, #undated-events button{
   background-color: transparent !important;
+}
+#calendar-app .fc-event, #calendar-drag-and-drop-container .fc-event {
+  background-color: inherit !important;
 }
