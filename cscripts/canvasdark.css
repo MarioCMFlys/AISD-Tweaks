@@ -417,6 +417,8 @@ footer.ic-app-footer{
 footer.ic-app-footer a{
   color: #394146 !important;
 }
+
+/* Mail / messages */
 ul.messages.unstyled.collectionViewItems{
 	background-color: #2C2F33 !important;
 	color: #DDD !important;
@@ -426,6 +428,19 @@ ul.messages.unstyled.collectionViewItems{
 	color: #DDD !important;
 	border-bottom-color: #394146 !important;
 }
+.message-list-scroller{
+  border-right-color: #394146 !important;
+}
+.message-list-scroller::-webkit-scrollbar {
+  display: none;
+}
+div.message-header, li.message-item-view{
+  border-color: #394146 !important;
+}
+.message-detail::-webkit-scrollbar {
+  display: none;
+}
+
 h3.subject,
 h2.author,
 div.summary{
