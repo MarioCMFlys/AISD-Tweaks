@@ -431,14 +431,8 @@ ul.messages.unstyled.collectionViewItems{
 .message-list-scroller{
   border-right-color: #394146 !important;
 }
-.message-list-scroller::-webkit-scrollbar {
-  display: none;
-}
 div.message-header, li.message-item-view{
   border-color: #394146 !important;
-}
-.message-detail::-webkit-scrollbar {
-  display: none;
 }
 
 h3.subject,
@@ -540,7 +534,6 @@ hr{
 }
 
 /* Generic buttons */
-
 .btn, .Button, .ui-button{
   color: #DDDDDD;
 }
@@ -559,6 +552,26 @@ hr{
 }
 .btn.btn-danger{
   background: #BF4949 !important;
+}
+
+/* Generic Scrollbars */
+*::-webkit-scrollbar {
+  background-color: #282b2e;
+  width: 10px;
+}
+*::-webkit-scrollbar-button{
+  background-color: #282b2e;
+  color: #AAA;
+}
+*::-webkit-scrollbar-button:hover{
+  background-color: #394146;
+  color: #FFF;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #394146;
+}
+*::-webkit-scrollbar-thumb:hover{
+  background-color: #4A5257;
 }
 
 
