@@ -104,26 +104,6 @@ a.icon-calendar-day::before{
   border-bottom: 1px solid #394146 !important;
 }
 
-.btn, .Button, .ui-button{
-  color: #DDDDDD;
-}
-.btn, .Button:not(.ic-DashboardCard__header-button):not(.disable_item_link):not(.ic-app-course-nav-toggle), .ui-button{
-  background-color: #23272A;
-  border-color: #1E2224;
-}
-.btn.btn-primary{
-  background: var(--ic-brand-primary) !important;
-}
-.btn.btn-success{
-  background: #127A1B !important;
-}
-.btn.btn-warning{
-  background: #C8562D !important;
-}
-.btn.btn-danger{
-  background: #BF4949 !important;
-}
-
 
 /* Todo list on dashboard */
 div.Sidebar__TodoListContainer > div > ul > li{
@@ -500,10 +480,21 @@ ul.feature-flags span.element_toggler i{
 table tbody tr th p.email_channel.contact_channel_path{
   color: #DDD !important;
 }
+table.email_channels th, table.email_channels td{
+  border-bottom-color: #394146 !important;
+}
 div#pairing-code button{
   background-color: #23272A !important;
   border-color: #1E2224;
   color: #DDD;
+}
+
+table#access_tokens, table#access_tokens th, table#access_tokens td{
+  border-color: #394146 !important;
+}
+
+ul.feature-flags, ul.feature-flags li{
+  border-color: #394146 !important;
 }
 
 /* Generic alert boxes */
@@ -525,6 +516,35 @@ div.alert.alert-danger{
   border: 1px solid #9C3131 !important;
 }
 
+/* Generic IC table & horizontal divider */
+.ic-Table th, .ic-Table td{
+  border-bottom-color: #394146 !important;
+}
+hr{
+  border-color: #394146 !important;
+}
+
+/* Generic buttons */
+
+.btn, .Button, .ui-button{
+  color: #DDDDDD;
+}
+.btn, .Button:not(.ic-DashboardCard__header-button):not(.disable_item_link):not(.ic-app-course-nav-toggle), .ui-button{
+  background-color: #23272A;
+  border-color: #1E2224;
+}
+.btn.btn-primary{
+  background: var(--ic-brand-primary) !important;
+}
+.btn.btn-success{
+  background: #127A1B !important;
+}
+.btn.btn-warning{
+  background: #C8562D !important;
+}
+.btn.btn-danger{
+  background: #BF4949 !important;
+}
 
 
 div.toolbarView, div.toolbarView div.headerBar{
