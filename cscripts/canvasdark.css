@@ -632,3 +632,9 @@ div#context-list-holder, #undated-events button{
 #calendar-app .fc-event, #calendar-drag-and-drop-container .fc-event {
   background-color: inherit !important;
 }
+div#minical.fc.fc-ltr.fc-unthemed{
+  display: none;
+}
+a#create_new_event_link{
+  color: #DDDDDD !important;
+}
