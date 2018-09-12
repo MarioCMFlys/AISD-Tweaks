@@ -38,7 +38,6 @@ chrome.storage.sync.get(null, function(result){
   defCheckbox("citrix", false);
   defCheckbox("erma", false);
   defCheckbox("eduphoria", false);
-  defCheckbox("canvasDarkTheme", false);
 
   document.getElementById("opt").addEventListener("submit", function(event){
     event.preventDefault();
@@ -49,7 +48,6 @@ chrome.storage.sync.get(null, function(result){
     checkSet("citrix");
     checkSet("erma");
     checkSet("eduphoria");
-    checkSet("canvasDarkTheme");
 
     btn = document.getElementById("btnSave");
     btn.innerHTML = "Saved";
