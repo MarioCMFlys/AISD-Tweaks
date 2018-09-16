@@ -33,22 +33,22 @@ div.ic-app-header__logomark-container{
 div#nav-tray-portal > span > span{
   background-color: #23272A !important;
 }
-div#nav-tray-portal > span > span > span > div.tray-with-space-for-global-nav > div h2{
+div.tray-with-space-for-global-nav > div h2{
   color: #DDDDDD;
 }
-div#nav-tray-portal > span > span > span > div.tray-with-space-for-global-nav > div hr{
+div.tray-with-space-for-global-nav > div hr{
   border-color: #394146 !important;
 }
-div#nav-tray-portal > span > span > span > div.tray-with-space-for-global-nav > div > ul > li > span > a{
+div.tray-with-space-for-global-nav > div > ul > li > span > a{
   color: var(--ic-link-color);
 }
-div#nav-tray-portal > span > span > span > div.tray-with-space-for-global-nav > div > ul > li > span > a:hover{
+div.tray-with-space-for-global-nav > div > ul > li > span > a:hover{
   color: var(--ic-link-color-darkened-10);
 }
-div#nav-tray-portal > span > span > span > div.tray-with-space-for-global-nav > div > ul > li > div{
+div.tray-with-space-for-global-nav > div > ul > li > div{
   color: #AAAAAA;
 }
-div#nav-tray-portal > span > span > span > div.tray-with-space-for-global-nav > div span{
+div.tray-with-space-for-global-nav > div span{
   color: #BBBBBB;
 }
 
