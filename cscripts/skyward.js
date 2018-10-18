@@ -40,6 +40,14 @@ window.addEventListener("load", function(){
         };`;
         document.head.appendChild(aisdDoc);
       }
+
+      timeoutScript = document.createElement("script");
+      timeoutScript.innerHTML = `
+        setInterval(function(){ // no more inactivity :D
+          gUsrIdle.clearIdle();
+          gUsrIdle.trackIdleTime();
+        },60000);`;
+      document.head.append(timeoutScript);
     }
   });
 });
