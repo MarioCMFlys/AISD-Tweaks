@@ -35,10 +35,17 @@ limitations under the License.
     form#opt label.ex{
       color: #AA0000;
     }
+
+    div.warning{
+      background-color: #FFDDDD;
+      border: #FFBBBB 1px solid;
+      padding: 5px;
+    }
     </style>
   </head>
   <body style="width: 325px;">
     <div class="main">
+      <div class="warning"><strong>Warning: </strong>the options listed in this menu are either included for development purposes or are experimental. If you don't know what it does, don't mess with it.</div>
       <form id="opt">
         <legend>Developer</legend>
         <label><input type="checkbox" id="dev" value="yes">Show the developer button</label><br>
