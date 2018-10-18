@@ -53,4 +53,8 @@ chrome.storage.sync.get(null, function(result){
     btn.innerHTML = "Saved";
     btn.disabled = true;
   });
+
+  document.getElementById("btnReset").addEventListener("click", function(){
+    chrome.storage.sync.clear(function(){document.querySelector("div.main").innerHTML="Storage cleared"});
+  });
 });
