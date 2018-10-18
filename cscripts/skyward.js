@@ -95,12 +95,15 @@ window.addEventListener("load", function(){
 
             if(name.includes("Pre-AP")){ // is class pre-ap?
               offset = 0.5;
+              classes[j].innerHTML = classes[j].innerHTML + '<span style="float:right;color:#AAA;">4.5</span>';
             }
             else if(name.includes("AP") || name.includes("IB")){ // is class ap or ib?
               offset = 0;
+              classes[j].innerHTML = classes[j].innerHTML + '<span style="float:right;color:#AAA;">5.0</span>';
             }
             else{ // if not...
               offset = 1;
+              classes[j].innerHTML = classes[j].innerHTML + '<span style="float:right;color:#AAA;">4.0</span>';
             }
             w = calculateWeightedGPA(grade, offset);
             weighted.push(w);
