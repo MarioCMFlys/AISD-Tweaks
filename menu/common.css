@@ -47,3 +47,8 @@ div.bottom a{
 div.bottom a:hover{
   opacity: 0.4;
 }
+div.warning{
+  background-color: #FFDDDD;
+  border: #FFBBBB 1px solid;
+  padding: 5px;
+}
