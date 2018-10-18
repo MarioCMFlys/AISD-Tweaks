@@ -39,6 +39,7 @@ chrome.storage.sync.get(null, function(result){
   // Skyward
   defCheckbox("skywardGrades", true);
   defCheckbox("skywardTab", true);
+  defCheckbox("skywardGpa", true);
 
   document.getElementById("opt").addEventListener("submit", function(event){
     event.preventDefault();
@@ -49,6 +50,7 @@ chrome.storage.sync.get(null, function(result){
 
     checkSet("skywardGrades");
     checkSet("skywardTab");
+    checkSet("skywardGpa");
 
     btn = document.getElementById("btnSave");
     btn.innerHTML = "Saved";

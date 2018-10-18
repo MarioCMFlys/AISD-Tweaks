@@ -14,21 +14,105 @@ See the License for the specific language governing permissions and
 limitations under the License.
 **/
 
+function chunkify(a, n, balanced) { // https://stackoverflow.com/a/8189268
+    if (n < 2) return [a];
+    var len = a.length, out = [], i = 0, size;
+    if (len % n === 0) {
+        size = Math.floor(len / n);
+        while (i < len) {
+            out.push(a.slice(i, i += size));
+        }
+    }
+    else if (balanced) {
+        while (i < len) {
+            size = Math.ceil((len - i) / n--);
+            out.push(a.slice(i, i += size));
+        }
+    }
+    else {
+        n--;
+        size = Math.floor(len / n);
+        if (len % size === 0)
+            size--;
+        while (i < size * n) {
+            out.push(a.slice(i, i += size));
+        }
+        out.push(a.slice(size * n));
+    }
+    return out;
+}
+
+function round(num, places) {
+    var multiplier = Math.pow(10, places);
+    return Math.round(num * multiplier) / multiplier;
+}
+
+function calculateWeightedGPA(grade, weight){
+  return grade * 0.05 - offset;
+}
+
 window.addEventListener("load", function(){
   chrome.storage.sync.get("null", function(result){
     if(result["mal"] != true){
       if(window.location.pathname == "/scripts/wsisa.dll/WService=wsEAplus/sfgradebook001.w"){
+        var aisdGrd = document.querySelectorAll('.scrollRows table tr.cPd td');
         if(result["skywardGrades"] == true || result["skywardGrades"] != false){
-          var aisdGrd = document.querySelectorAll('a[name="showGradeInfo"]');
           for(j = 0; j < aisdGrd.length; j++){
             i = aisdGrd[j];
-            if(parseInt(i.innerHTML) < 70){
-              i.style.color = '#FF0000';
+            if(i.children.length != 0){
+              c = i.children[0];
+            }
+            if(parseInt(c.innerHTML) < 70){
+              c.style.color = '#FF0000';
             }
           }
 
           legend = document.querySelector('div#printGradesContainer > div.fXs.fIl.fWn');
           legend.innerHTML = legend.innerHTML + '<br><span style="float:right;">Failing grades are <b>red</b>.</span>';
+        }
+
+        if(result["skywardGpa"] == true || result["skywardGpa"] != false){
+          // arr.slice(Math.max(arr.length - 5, 1))
+          grades = [];
+          for(j=0;j<aisdGrd.length;j++){
+            i = aisdGrd[j];
+            if(i.children.length != 0){
+              g = parseInt(i.children[0].innerHTML);
+            }
+            else{
+              g = 100;
+            }
+            grades.push(g);
+          }
+          classes = document.querySelectorAll("div.fixedRows table tr td div.gridWrap table tr td span.bld a");
+          chunks = chunkify(grades, classes.length, true);
+          console.debug(grades.length+", "+classes.length+", "+(grades.length-classes.length));
+          weighted = [];
+          for(j=0;j<classes.length;j++){
+            name = classes[j].innerHTML;
+            cs = chunks[j];
+            grade = cs[cs.length-1];
+
+            if(name.includes("Pre-AP")){ // is class pre-ap?
+              offset = 0.5;
+            }
+            else if(name.includes("AP") || name.includes("IB")){ // is class ap or ib?
+              offset = 0;
+            }
+            else{ // if not...
+              offset = 1;
+            }
+            w = calculateWeightedGPA(grade, offset);
+            weighted.push(w);
+            console.debug(name+", grade="+grade+", offset="+offset+", weighted="+w);
+
+          }
+          gpa = round(((weighted.reduce(function(a, b) { return a + b; }, 0)) / weighted.length), 2);
+          gcon = document.querySelector("#printGradesContainer");
+          lab = document.createElement("p");
+          lab.style = "text-align:center;padding-bottom:20px;";
+          lab.innerHTML = 'Estimated semester weighted GPA: <strong>'+gpa+'</strong>'
+          gcon.appendChild(lab);
         }
       }
 
