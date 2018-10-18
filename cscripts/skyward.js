@@ -110,11 +110,11 @@ window.addEventListener("load", function(){
             console.debug(name+", grade="+grade+", offset="+offset+", weighted="+w);
 
           }
-          gpa = round(((weighted.reduce(function(a, b) { return a + b; }, 0)) / weighted.length), 2);
+          gpa = round(((weighted.reduce(function(a, b) { return a + b; }, 0)) / weighted.length), 1).toFixed(1);
           gcon = document.querySelector("#printGradesContainer");
           lab = document.createElement("p");
           lab.style = "text-align:center;padding-bottom:20px;";
-          lab.innerHTML = 'Estimated semester weighted GPA: <strong>'+gpa+'</strong>'
+          lab.innerHTML = 'Estimated semester weighted GPA: <strong>'+gpa+'</strong>';
           gcon.appendChild(lab);
         }
       }
