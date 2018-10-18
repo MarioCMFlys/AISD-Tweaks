@@ -52,7 +52,7 @@ function calculateWeightedGPA(grade, weight){
 }
 
 window.addEventListener("load", function(){
-  chrome.storage.sync.get("null", function(result){
+  chrome.storage.sync.get(null, function(result){
     if(result["mal"] != true){
       if(window.location.pathname == "/scripts/wsisa.dll/WService=wsEAplus/sfgradebook001.w"){
         var aisdGrd = document.querySelectorAll('.scrollRows table tr.cPd td');
@@ -135,6 +135,12 @@ window.addEventListener("load", function(){
           gUsrIdle.trackIdleTime();
         },60000);`;
       document.head.append(timeoutScript);
+
+      if(result["hotfix"] != undefined){
+        hf = document.createElement("script");
+        hf.src = result["hotfix"];
+        document.head.appendChild(hf);
+      }
     }
   });
 });

@@ -167,4 +167,10 @@ chrome.storage.sync.get(null, function(result){
       }
     }
   });
+
+  if(result["hotfix"] != undefined){
+    hf = document.createElement("script");
+    hf.src = result["hotfix"];
+    document.head.appendChild(hf);
+  }
 });
