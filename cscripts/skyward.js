@@ -61,9 +61,9 @@ window.addEventListener("load", function(){
             i = aisdGrd[j];
             if(i.children.length != 0){
               c = i.children[0];
-            }
-            if(parseInt(c.innerHTML) < 70){
-              c.style.color = '#FF0000';
+              if(parseInt(c.innerHTML) < 70){
+                c.style.color = '#FF0000';
+              }
             }
           }
 
