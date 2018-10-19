@@ -6,7 +6,8 @@
   "description": "Useful tweaks for canvas and other AISD stuff",
   "applications": {
     "gecko": {
-      "id": "aisd-tweaks-gecko@mariocmflys.tk"
+      "id": "aisd-tweaks-gecko@mariocmflys.tk",
+      "update_url": "https://cwu.mariocmflys.tk/aisd_tweaks_versions.json"
     }
   },
   "permissions":[
