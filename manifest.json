@@ -3,7 +3,7 @@
   "name": "AISD Tweaks",
   "author": "MarioCMFlys",
   "version": "1.6.1",
-  "description": "Useful tweaks for canvas and other AISD stuff",
+  "description": "Additional features for AISD internal apps",
   "applications": {
     "gecko": {
       "id": "aisd-tweaks-gecko@mariocmflys.tk",
