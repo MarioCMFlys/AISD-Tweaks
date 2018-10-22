@@ -14,6 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 **/
 
+var clicks = 0;
+
 chrome.storage.sync.get(null, function(result){
   function defCheckbox(name, def){
       if(result[name] == true){
@@ -63,9 +65,18 @@ chrome.storage.sync.get(null, function(result){
   dev.style.textDecoration = "none";
   dev.href = "#";
   dev.addEventListener("click", function(){
-    f = {};
-    f["dev"] = true;
-    chrome.storage.sync.set(f, function(){});
+    clicks = clicks + 1;
+    if(clicks == 7){
+      if(result["dev"] != true){
+        f = {};
+        f["dev"] = true;
+        chrome.storage.sync.set(f, function(){});
+        alert("You are now a developer!");
+      }
+      else{
+        alert("You are already a developer!");
+      }
+    }
   });
 
   if(result["mal"] == true){
