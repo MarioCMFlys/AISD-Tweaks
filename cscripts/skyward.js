@@ -47,7 +47,7 @@ function round(num, places) {
     return Math.round(num * multiplier) / multiplier;
 }
 
-function calculateWeightedGPA(grade, weight){
+function calculateWeightedGPA(grade, offset){
   return grade * 0.05 - offset;
 }
 
