@@ -35,6 +35,9 @@
     "browser_style": true,
     "show_matches": ["*://*/*"]
   },
+  "omnibox": {
+    "keyword":"aisd"
+  },
   "content_scripts":[
     {
       "css":["cscripts/canvas.css"],
