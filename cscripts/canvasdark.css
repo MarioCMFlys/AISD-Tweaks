@@ -40,7 +40,7 @@ div.tray-with-space-for-global-nav > div hr{
   border-color: #394146 !important;
 }
 div.tray-with-space-for-global-nav > div > ul > li > span > a{
-  color: var(--ic-link-color);
+  color: var(--ic-link-color) !important;
 }
 div.tray-with-space-for-global-nav > div > ul > li > span > a:hover{
   color: var(--ic-link-color-darkened-10);
@@ -344,6 +344,9 @@ table.roster th, table.roster td{
   border-bottom-color: #5F656D;
 }
 
+.course-list-favorite-course{
+  color: #FF7F0B !important;
+}
 tr.course-list-table-row:hover{
   background-color: #444 !important;
 
@@ -444,6 +447,10 @@ form[action="/logout"] button{
 	background-color: #171A1C !important;
 	color: #DDD !important;
   border: 0 !important;
+}
+
+.message-list .message-count{
+  background-color: #4A5257 !important;
 }
 
 
