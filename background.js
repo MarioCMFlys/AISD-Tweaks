@@ -116,7 +116,7 @@ chrome.omnibox.onInputChanged.addListener(function(text, suggest) {
   }
 
   current = s.filter(function(e){
-    return e.content.startsWith(text);
+    return (e.content.startsWith(text) || e.description.toLowerCase().includes(text));
   });
 
   if(current.length >= 1){
@@ -140,7 +140,7 @@ chrome.omnibox.onInputEntered.addListener(function(text) {
   text = text.toLowerCase();
 
   current = suggestions.filter(function(e){
-    return e.s.content.startsWith(text);
+    return (e.s.content.startsWith(text) || e.s.description.toLowerCase().includes(text));
   });
 
   if(current.length >= 1){
