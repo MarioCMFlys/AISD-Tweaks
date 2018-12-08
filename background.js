@@ -38,7 +38,6 @@ chrome.alarms.onAlarm.addListener(function(alarm){
 function processMessages(data){
   chrome.storage.sync.get(null, function(storage){
     known = storage["latestMessage"];
-    console.log(data);
     newest = data[0].id;
     if(known != newest){
       unread = data.filter(function(e){
@@ -71,7 +70,6 @@ function processMessages(data){
           l.message = "";
           opt.items.push(l);
         }
-        console.log(opt);
         chrome.notifications.create("msg"+Date.now(), opt);
       }
     }

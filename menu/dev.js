@@ -57,4 +57,7 @@ chrome.storage.sync.get(null, function(result){
   document.getElementById("btnReset").addEventListener("click", function(){
     chrome.storage.sync.clear(function(){document.querySelector("div.main").innerHTML="Storage cleared"});
   });
+  document.getElementById("btnClearLatest").addEventListener("click", function(){
+    chrome.storage.sync.remove("latestMessage");
+  });
 });
