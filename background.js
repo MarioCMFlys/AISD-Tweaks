@@ -16,6 +16,76 @@ limitations under the License.
 
 chrome.runtime.onInstalled.addListener(function() {
   chrome.browserAction.enable();
+  chrome.alarms.create("notifier", {periodInMinutes:1});
+});
+
+chrome.alarms.onAlarm.addListener(function(alarm){
+  if(alarm.name == "notifier"){
+    //  https://canvas.allenisd.org/api/v1/conversations?scope=inbox&filter_mode=and&include_private_conversation_enrollments=false
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        text = this.responseText.replace("while(1);","");
+        data = JSON.parse(text);
+        processMessages(data);
+      }
+    };
+    xhr.open("GET", "https://canvas.allenisd.org/api/v1/conversations?scope=inbox&filter_mode=and&include_private_conversation_enrollments=false", true);
+    xhr.send();
+  }
+});
+
+function processMessages(data){
+  chrome.storage.sync.get(null, function(storage){
+    known = storage["latestMessage"];
+    console.log(data);
+    newest = data[0].id;
+    if(known != newest){
+      unread = data.filter(function(e){
+        return e.workflow_state == "unread";
+      });
+      if(unread.length == 1){
+        opt = {
+          type: 'basic',
+          title: unread[0].subject,
+          message: 'New message on Canvas',
+          iconUrl: chrome.extension.getURL('./images/app-canvas.png'),
+          eventTime: Date.now()
+        }
+        chrome.notifications.create("msg"+Date.now(), opt);
+      }
+      if(unread.length >= 2){
+        opt = {
+          type: 'list',
+          title: unread.length+" new messages",
+          iconUrl: chrome.extension.getURL('./images/app-canvas.png'),
+          message: '',
+          eventTime: Date.now(),
+          items: []
+        };
+        for(j=0;j<unread.length;j++){
+          i = unread[j];
+          title = i.subject;
+          l = {};
+          l.title = title;
+          l.message = "";
+          opt.items.push(l);
+        }
+        console.log(opt);
+        chrome.notifications.create("msg"+Date.now(), opt);
+      }
+    }
+    f = {};
+    f["latestMessage"] = newest;
+    chrome.storage.sync.set(f, function(){});
+  });
+}
+
+chrome.notifications.onClicked.addListener(function(id){
+  if(id.startsWith("msg")){
+    chrome.notifications.clear(id);
+    chrome.tabs.create({url:"https://canvas.allenisd.org/conversations"});
+  }
 });
 
 var suggestions = [

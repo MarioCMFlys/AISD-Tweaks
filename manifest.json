@@ -12,7 +12,10 @@
   },
   "permissions":[
     "storage",
-    "activeTab"
+    "activeTab",
+    "notifications",
+    "alarms",
+    "*://canvas.allenisd.org/*"
   ],
   "icons":{
     "16": "images/icon16.png",
