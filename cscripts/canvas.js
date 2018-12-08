@@ -77,6 +77,13 @@ chrome.storage.sync.get(null, function(result){
     aisdDarkStyle.id = "aisdDarkStyle";
     aisdDarkStyle.rel = "stylesheet";
     aisdHead.appendChild(aisdDarkStyle);
+    if(window.location.pathname.startsWith("/courses/858742")){
+      var apgStyle = document.createElement("link");
+      apgStyle.href = chrome.extension.getURL('./cscripts/apg-dark.css');
+      apgStyle.id = "aisdAPGStyle";
+      apgStyle.rel = "stylesheet";
+      aisdHead.appendChild(apgStyle);
+    }
   }
   window.addEventListener("load", function(){
     if(result["canvasTestPage"] == true && window.location.href.indexOf("assignments") > -1){
@@ -150,6 +157,18 @@ chrome.storage.sync.get(null, function(result){
         if(aisdConExists){
           aisdSectionTabs.appendChild(aisdConEdSrc);
           aisdConEdSrc.appendChild(aisdConEd);
+        }
+
+        // APG-specific navigation entries
+        if(window.location.pathname.startsWith("/courses/858742")){
+          aisdSectionTabs.innerHTML = "";
+          aisdSectionTabs.innerHTML = aisdSectionTabs.innerHTML+'<li class="section"><a href="/courses/858742/pages/academic-planning" tabindex="0" title="Home">Home</a></li>';
+          aisdSectionTabs.innerHTML = aisdSectionTabs.innerHTML+'<li class="section"><a href="/courses/858742/pages/general-information" tabindex="0" title="Information">Information</a></li>';
+          aisdSectionTabs.innerHTML = aisdSectionTabs.innerHTML+'<li class="section"><a href="/courses/858742/pages/course-listings" tabindex="0" title="Courses">Courses</a></li>';
+          aisdSectionTabs.innerHTML = aisdSectionTabs.innerHTML+'<li class="section"><a href="/courses/858742/pages/advanced-academics" tabindex="0" title="Advanced">Advanced</a></li>';
+          aisdSectionTabs.innerHTML = aisdSectionTabs.innerHTML+'<li class="section"><a href="/courses/858742/pages/Graduation%20Planning%20%26%20House%20Bill%205?titleize=0" tabindex="0" title="Graduation">Graduation</a></li>';
+          aisdSectionTabs.innerHTML = aisdSectionTabs.innerHTML+'<li class="section"><a href="/courses/858742/pages/Endorsements?titleize=0" tabindex="0" title="Endorsements">Endorsements</a></li>';
+          aisdSectionTabs.innerHTML = aisdSectionTabs.innerHTML+'<li class="section"><a href="/courses/858742/pages/course-applications" tabindex="0" title="Resources">Resources</a></li>';
         }
       }
 

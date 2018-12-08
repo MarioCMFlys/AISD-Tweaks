@@ -195,6 +195,9 @@ div#wiki_page_show div.header-bar{
 div#wiki_page_show div.header-bar h2{
   color: #FFF !important;
 }
+.pages.show h1.page-title{
+  color: #FFF !important;
+}
 
 div#assignment_show{
   color: #DDD !important;

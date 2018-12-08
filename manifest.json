@@ -60,6 +60,7 @@
   ],
   "web_accessible_resources":[
     "cscripts/canvasdark.css",
+    "cscripts/apg-dark.css",
     "images/*.png"
   ]
 }
