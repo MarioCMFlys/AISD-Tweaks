@@ -37,45 +37,48 @@ chrome.alarms.onAlarm.addListener(function(alarm){
 
 function processMessages(data){
   chrome.storage.sync.get(null, function(storage){
-    known = storage["latestMessage"];
-    newest = data[0].id;
-    if(known != newest){
-      unread = data.filter(function(e){
-        return e.workflow_state == "unread";
-      });
-      if(unread.length == 1){
-        opt = {
-          type: 'basic',
-          title: unread[0].subject,
-          message: 'New message on Canvas',
-          iconUrl: chrome.extension.getURL('./images/app-canvas.png'),
-          eventTime: Date.now()
+    if(result["skywardGpa"] == true || result["skywardGpa"] != false){
+
+      known = storage["latestMessage"];
+      newest = data[0].id;
+      if(known != newest){
+        unread = data.filter(function(e){
+          return e.workflow_state == "unread";
+        });
+        if(unread.length == 1){
+          opt = {
+            type: 'basic',
+            title: unread[0].subject,
+            message: 'New message on Canvas',
+            iconUrl: chrome.extension.getURL('./images/app-canvas.png'),
+            eventTime: Date.now()
+          }
+          chrome.notifications.create("msg"+Date.now(), opt);
         }
-        chrome.notifications.create("msg"+Date.now(), opt);
-      }
-      if(unread.length >= 2){
-        opt = {
-          type: 'list',
-          title: unread.length+" new messages",
-          iconUrl: chrome.extension.getURL('./images/app-canvas.png'),
-          message: '',
-          eventTime: Date.now(),
-          items: []
-        };
-        for(j=0;j<unread.length;j++){
-          i = unread[j];
-          title = i.subject;
-          l = {};
-          l.title = title;
-          l.message = "";
-          opt.items.push(l);
+        if(unread.length >= 2){
+          opt = {
+            type: 'list',
+            title: unread.length+" new messages",
+            iconUrl: chrome.extension.getURL('./images/app-canvas.png'),
+            message: '',
+            eventTime: Date.now(),
+            items: []
+          };
+          for(j=0;j<unread.length;j++){
+            i = unread[j];
+            title = i.subject;
+            l = {};
+            l.title = title;
+            l.message = "";
+            opt.items.push(l);
+          }
+          chrome.notifications.create("msg"+Date.now(), opt);
         }
-        chrome.notifications.create("msg"+Date.now(), opt);
       }
+      f = {};
+      f["latestMessage"] = newest;
+      chrome.storage.sync.set(f, function(){});
     }
-    f = {};
-    f["latestMessage"] = newest;
-    chrome.storage.sync.set(f, function(){});
   });
 }
 
