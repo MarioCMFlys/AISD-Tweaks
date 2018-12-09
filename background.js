@@ -145,6 +145,9 @@ chrome.omnibox.onInputChanged.addListener(function(text, suggest) {
   for(i=0;i<suggestions.length;i++){
     s.push(suggestions[i].s);
   }
+  if(!coursesAppended){
+    s.push({content: "~E", description: "<dim>Login to Canvas to see personalized options</dim>"});
+  }
 
   current = s.filter(function(e){
     return (e.content.startsWith(text) || e.description.toLowerCase().includes(text));
