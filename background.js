@@ -17,7 +17,34 @@ limitations under the License.
 chrome.runtime.onInstalled.addListener(function() {
   chrome.browserAction.enable();
   chrome.alarms.create("notifier", {periodInMinutes:1});
+  appendCourses();
 });
+
+var coursesAppended = false;
+
+function appendCourses(){
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      coursesAppended = true;
+      text = this.responseText.replace("while(1);","");
+      data = JSON.parse(text);
+      courses = [];
+      for(j=0;j<data.length;j++){
+        i = data[j];
+        c = {};
+        c.s = {};
+        c.s.content = "~#"+i.id;
+        c.s.description = "<url>" + i.name + "</url>";
+        c.url = "https://canvas.allenisd.org/courses/"+i.id;
+        courses.push(c);
+      }
+      suggestions.push.apply(suggestions, courses);
+    }
+  };
+  xhr.open("GET", "https://canvas.allenisd.org/api/v1/users/self/favorites/courses?include[]=term&exclude[]=en", true);
+  xhr.send();
+}
 
 chrome.alarms.onAlarm.addListener(function(alarm){
   if(alarm.name == "notifier"){
@@ -28,6 +55,9 @@ chrome.alarms.onAlarm.addListener(function(alarm){
         text = this.responseText.replace("while(1);","");
         data = JSON.parse(text);
         processMessages(data);
+        if(!coursesAppended){
+          appendCourses();
+        }
       }
     };
     xhr.open("GET", "https://canvas.allenisd.org/api/v1/conversations?scope=inbox&filter_mode=and&include_private_conversation_enrollments=false", true);
@@ -37,7 +67,7 @@ chrome.alarms.onAlarm.addListener(function(alarm){
 
 function processMessages(data){
   chrome.storage.sync.get(null, function(storage){
-    if(result["canvasNotify"] == true || result["canvasNotify"] != false){
+    if(storage["canvasNotify"] == true || storage["canvasNotify"] != false){
 
       known = storage["latestMessage"];
       newest = data[0].id;
@@ -147,7 +177,6 @@ chrome.omnibox.onInputEntered.addListener(function(text) {
   if(current.length >= 1){
     req = current[0];
     open(req.url);
-
   }
   else{
     openQuery(text);
