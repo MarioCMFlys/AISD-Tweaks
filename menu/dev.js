@@ -35,6 +35,7 @@ chrome.storage.sync.get(null, function(result){
   defCheckbox("dev", false);
   defCheckbox("mal", false);
   defCheckbox("canvasTestPage", false);
+  defCheckbox("supressBGComms", false);
   defCheckbox("citrix", false);
   defCheckbox("erma", false);
   defCheckbox("eduphoria", false);
@@ -45,6 +46,7 @@ chrome.storage.sync.get(null, function(result){
     checkSet("dev");
     checkSet("mal");
     checkSet("canvasTestPage");
+    checkSet("supressBGComms");
     checkSet("citrix");
     checkSet("erma");
     checkSet("eduphoria");
