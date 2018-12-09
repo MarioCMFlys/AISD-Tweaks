@@ -37,7 +37,7 @@ chrome.alarms.onAlarm.addListener(function(alarm){
 
 function processMessages(data){
   chrome.storage.sync.get(null, function(storage){
-    if(result["skywardGpa"] == true || result["skywardGpa"] != false){
+    if(result["canvasNotify"] == true || result["canvasNotify"] != false){
 
       known = storage["latestMessage"];
       newest = data[0].id;
