@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "AISD Tweaks",
   "author": "MarioCMFlys",
-  "version": "1.7",
+  "version": "1.7.1",
   "description": "Additional features for AISD internal apps",
   "applications": {
     "gecko": {
@@ -25,7 +25,7 @@
   },
   "background": {
     "scripts": ["background.js"],
-    "persistent": false
+    "persistent": true
   },
   "browser_action": {
     "default_popup": "menu/popup.html",
