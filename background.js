@@ -128,6 +128,7 @@ var suggestions = [
   {s: {content: "citrix", description: "Citrix Storefront"}, url: "https://citrix.allenisd.org/vpn/index.html"},
   {s: {content: "home", description: "AISD Front Page <dim>(home)</dim>"}, url: "https://www.allenisd.org/"},
   {s: {content: "hs", description: "Allen HS <dim>(hs)</dim>"}, url: "https://www.allenisd.org/allenhs"},
+  {s: {content: "steam", description: "STEAM Center"}, url: "https://www.allenisd.org/Page/54990"},
   {s: {content: "lowery", description: "Lowery FC"}, url: "https://www.allenisd.org/loweryhs"},
   {s: {content: "curtis", description: "Curtis MS"}, url: "https://www.allenisd.org/curtisms"},
   {s: {content: "ereckson", description: "Ereckson MS"}, url: "https://www.allenisd.org/erecksonms"},
