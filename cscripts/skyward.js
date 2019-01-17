@@ -114,7 +114,8 @@ window.addEventListener("load", function(){
           gcon = document.querySelector("#printGradesContainer");
           lab = document.createElement("p");
           lab.style = "text-align:center;padding-bottom:20px;";
-          lab.innerHTML = 'Estimated semester weighted GPA: <strong>'+gpa+'</strong>';
+          //lab.innerHTML = 'Estimated semester weighted GPA: <strong>'+gpa+'</strong>';
+          lab.innerHTML = '<i>GPA Calculator temporarily disabled. <a href="https://mariocmflys.tk/help/a/aisd-tweaks/gpa-issue" target="_at_info">Learn more</a></i>';
           gcon.appendChild(lab);
         }
       }
