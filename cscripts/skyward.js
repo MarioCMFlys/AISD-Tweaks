@@ -52,6 +52,7 @@ function calculateWeightedGPA(grade, offset){
 }
 
 window.addEventListener("load", function(){
+  fail = false;
   chrome.storage.sync.get(null, function(result){
     if(result["mal"] != true){
       if(window.location.pathname == "/scripts/wsisa.dll/WService=wsEAplus/sfgradebook001.w"){
@@ -63,6 +64,7 @@ window.addEventListener("load", function(){
               c = i.children[0];
               if(parseInt(c.innerHTML) < 70){
                 c.style.color = '#FF0000';
+                fail = true;
               }
             }
           }
@@ -113,10 +115,22 @@ window.addEventListener("load", function(){
           gpa = round(((weighted.reduce(function(a, b) { return a + b; }, 0)) / weighted.length), 1).toFixed(1);
           gcon = document.querySelector("#printGradesContainer");
           lab = document.createElement("p");
-          lab.style = "text-align:center;padding-bottom:20px;";
+          lab.style = "text-align:center;padding-bottom:10px;";
           //lab.innerHTML = 'Estimated semester weighted GPA: <strong>'+gpa+'</strong>';
           lab.innerHTML = '<i>GPA Calculator temporarily disabled. <a href="https://mariocmflys.tk/help/a/aisd-tweaks/gpa-issue" target="_at_info">Learn more</a></i>';
           gcon.appendChild(lab);
+          if(fail == true) {
+            h = document.createElement("p");
+            h.style = "text-align:center;padding-bottom:20px;";
+            h.innerHTML = '<i><b>You are eligible for Academic Monitoring at the semester!</b></i>';
+            gcon.appendChild(h);
+          }
+          else {
+            h = document.createElement("p");
+            h.style = "text-align:center;padding-bottom:20px;";
+            h.innerHTML = '<i>You are <b>safe</b> from Academic Monitoring</i>';
+            gcon.appendChild(h);
+          }
         }
       }
 
