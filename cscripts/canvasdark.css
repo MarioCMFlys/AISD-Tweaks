@@ -648,3 +648,16 @@ div#minical.fc.fc-ltr.fc-unthemed{
 a#create_new_event_link{
   color: #DDDDDD !important;
 }
+
+div.ig-row{
+  background-color: #3B3F44 !important;
+  color: #DDD !important;
+}
+
+a.ig-title{
+  color: #97C3D3 !important;
+}
+
+a.element_toggler.accessible-toggler{
+  color: #97C3D3 !important;
+}
