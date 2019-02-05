@@ -119,13 +119,36 @@ window.addEventListener("load", function(){
           //lab.innerHTML = 'Estimated semester weighted GPA: <strong>'+gpa+'</strong>';
           lab.innerHTML = '<i>GPA Calculator temporarily disabled. <a href="https://mariocmflys.tk/help/a/aisd-tweaks/gpa-issue" target="_at_info">Learn more</a></i>';
           gcon.appendChild(lab);
-          if(fail == true) {
+
+          /* Determine eligibility for academic monitoring */
+          var tiles = document.querySelectorAll(".scrollRows .sf_highlightYellow:not(.cPd)");
+          var width = 1;
+          var failing = 0;
+          if(tiles.length % 3 == 0) width = 3;
+          if(tiles.length % 2 == 0) width = 2;
+          var pos = width;
+          for(i = 0; i<tiles.length; i++){
+            pos = pos - 1;
+            console.debug(pos + " " + i);
+            if(pos != 0) continue;
+
+            x = tiles[i];
+            console.debug(x.children[0].innerText);
+            if(parseInt(x.children[0].innerText) < 70){
+              failing = failing + 1;
+            }
+
+            pos = width;
+          }
+          if(failing > 1) {
+            console.debug("AM eligible");
             h = document.createElement("p");
             h.style = "text-align:center;padding-bottom:20px;";
             h.innerHTML = '<i><b>You are eligible for Academic Monitoring at the semester!</b></i>';
             gcon.appendChild(h);
           }
           else {
+            console.debug("AM safe");
             h = document.createElement("p");
             h.style = "text-align:center;padding-bottom:20px;";
             h.innerHTML = '<i>You are <b>safe</b> from Academic Monitoring</i>';
