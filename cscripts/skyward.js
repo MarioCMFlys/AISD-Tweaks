@@ -142,17 +142,23 @@ window.addEventListener("load", function(){
           }
           if(failing > 1) {
             console.debug("AM eligible");
-            h = document.createElement("p");
-            h.style = "text-align:center;padding-bottom:20px;";
-            h.innerHTML = '<i><b>You are eligible for Academic Monitoring at the semester!</b></i>';
-            gcon.appendChild(h);
+            var warningbox = document.createElement("div");
+            warningbox.setAttribute("grid-theme", "summary");
+            warningbox.classList.add("gridWrap");
+            warningbox.style = "clear: both";
+            warningbox.innerHTML = `
+            <div class="sf_gridTableWrap">
+              <table vpaginate="no" id="grid_suppressed" grid-table="summary" zebra="false">
+              <thead><tr><th scope="col" style="color: red;">You are eligible for Academic Monitoring</th></tr></thead>
+              <tbody><tr class=""><td scope="row" class="wSn">
+                You are currently failing <strong>'+ failing +'</strong> classes. If you are failing 2 or more classes at the progress report, you will be placed in AM until the next progress report where you are no longer failing any classes. Academic Monitoring is an extra support class which occupies your privilege period(s).
+                </td></tr></tbody>
+              </table>
+            </div>`;
+            document.querySelector('#sf_ContentBody #grid_suppressed_gridWrap').insertAdjacentElement("afterEnd", warningbox);
           }
           else {
             console.debug("AM safe");
-            h = document.createElement("p");
-            h.style = "text-align:center;padding-bottom:20px;";
-            h.innerHTML = '<i>You are <b>safe</b> from Academic Monitoring</i>';
-            gcon.appendChild(h);
           }
         }
       }
