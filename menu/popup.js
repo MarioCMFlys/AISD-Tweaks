@@ -106,5 +106,28 @@ chrome.storage.sync.get(null, function(result){
     });
   }
 
+  // Atriuum
+  if(result["atriuum"] == true){
+    v = createLink("Atriuum", "/images/app-atriuum.png", "https://portal.allenisd.org/_sso/Web/LaunchApplication.aspx?AppPath=%22Applications%2fManaged+Applications%2fAtriuumOPACSSO%22&MacroName=1", true);
+    links.appendChild(v);
+  }
+  else{
+    chrome.tabs.query({active:true,lastFocusedWindow:true}, function(tabs){
+      tab = tabs[0];
+      if(tab.url.startsWith("https://atriuum.allenisd.org")){
+        v = createSuggestion("Atriuum", "/images/app-atriuum.png");
+        v.addEventListener('click', function(){
+          v = createLink("Atriuum", "/images/app-atriuum.png", "https://portal.allenisd.org/_sso/Web/LaunchApplication.aspx?AppPath=%22Applications%2fManaged+Applications%2fAtriuumOPACSSO%22&MacroName=1", true);
+          links.appendChild(v);
+          document.querySelector("#suggested").style.display = "none";
+          f = {};
+          f["atriuum"] = true;
+          chrome.storage.sync.set(f, function(){});
+        });
+        links.insertBefore(v, links.childNodes[0]);
+      }
+    });
+  }
+
   if(btnDev != null) links.appendChild(btnDev);
 });
