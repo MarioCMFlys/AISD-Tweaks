@@ -22,7 +22,7 @@ limitations under the License.
 }
 
 body{
-  background-color: #2C2F33;
+  background-color: #2C2F33 !important;
 }
 header.ic-app-header{
   background-color: #23272A !important;
