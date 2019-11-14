@@ -165,6 +165,12 @@ window.addEventListener("load", function(){
         }
       }
 
+      if(window.location.pathname == "/scripts/wsisa.dll/WService=wsEAplus/seplog01.w"){
+        if(result["skywardBanner"] == true || result["skywardBanner"] != false){
+          document.querySelector("div#rowTop").style.display="none";
+        }
+      }
+
       if(result["skywardTab"] == true || result["skywardTab"] != false){
         var aisdDoc = document.createElement("script");
         aisdDoc.innerHTML = `var aisdOldOpen = window.open;

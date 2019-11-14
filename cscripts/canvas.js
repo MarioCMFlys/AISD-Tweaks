@@ -174,7 +174,7 @@ chrome.storage.sync.get(null, function(result){
 
       // Edit the navbar courses
       if(result["canvasListModules"] == true || result["canvasListModules"] != false){
-        document.getElementById("global_nav_courses_link").addEventListener('click', function(){
+        document.querySelector("#global_nav_courses_link").addEventListener('click', function(){
           setTimeout(function(){
             var aisdNavCrs = document.querySelectorAll('li > span > a[href^="/courses/"]');
             for(j = 0; j < aisdNavCrs.length; j++){
