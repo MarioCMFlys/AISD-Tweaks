@@ -24,8 +24,9 @@ document.getElementById('hotfix_link').addEventListener('click', function(){
   <div class="warning"><strong>Warning: </strong>only apply modifications made by people you trust.</div>
   <h1>Apply Modification</h1>
   <p>If you already have a modification, it will display here</p>
-  <input style="width: 100%;margin-bottom:5px;" id="hotfix_input" placeholder="Paste URL here"></input>
-  <button id="hotfix_confirm" type="button">Save</button><button id="hotfix_remove" type="button">Remove</button>`;
+  <input class="field" id="hotfix_input" placeholder="Paste URL here"></input>
+  <button id="hotfix_confirm" type="button" class="btn">Save</button>
+  <button id="hotfix_remove" type="button" class="btn">Remove</button>`;
 
   chrome.storage.sync.get(null, function(result){
     if(result["hotfix"] != undefined) document.querySelector('#hotfix_input').value = result["hotfix"];

@@ -35,10 +35,9 @@ img.header-logo{
   margin-bottom: 5px;
 }
 div.bottom{
-  background-color: #EEEEEE;
+  background-color: #FAFAFA;
   width: 100%;
   padding: 10px;
-  border-top: 1px solid #CCCCCC;
 }
 div.bottom a{
   color: #000000;
@@ -51,6 +50,52 @@ div.bottom a:hover{
 }
 div.warning{
   background-color: #FFDDDD;
-  border: #FFBBBB 1px solid;
   padding: 5px;
 }
+
+input.field {
+  background: #FFFFFF;
+  padding: 7px;
+  border: 1px solid #DDD;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+button.btn {
+  background: #222;
+  color: #FFFFFF;
+  padding: 10px;
+  border: 0;
+  font-size: 12;
+  text-transform: uppercase;
+  margin-right: 5px;
+}
+button.btn:hover {
+  background: #444;
+}
+
+button.btn.btn-primary {
+  background: #248;
+}
+button.btn.btn-primary:hover {
+  background: #2C58AF;
+}
+
+button.btn.btn-danger {
+  background: #A22;
+}
+button.btn.btn-danger:hover {
+  background: #C44;
+}
+
+.page-title {
+  margin-top: 20px;
+}
+
+/**input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+}**/

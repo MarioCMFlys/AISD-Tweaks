@@ -64,7 +64,7 @@ chrome.storage.sync.get(null, function(result){
   });
 
   dev = document.querySelector("a#enableDevButton");
-  dev.style.cursor = "text";
+  dev.style.cursor = "default";
   dev.style.color = "#000000";
   dev.style.textDecoration = "none";
   dev.href = "#";
