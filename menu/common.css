@@ -92,10 +92,7 @@ button.btn.btn-danger:hover {
   margin-top: 20px;
 }
 
-/**input[type=checkbox] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  width: 0;
-  height: 0;
-}**/
+a {
+  color: #22A;
+}
+
