@@ -31,6 +31,30 @@ function createSuggestion(app, image){
   return v;
 }
 
+function handleApp(result, id, name, trigger, destination){
+  if(result[id] == true){
+    v = createLink(name, "/images/app-"+id+".png", destination, true);
+    links.appendChild(v);
+  }
+  else{
+    chrome.tabs.query({active:true,lastFocusedWindow:true}, function(tabs){
+      tab = tabs[0];
+      if(tab.url.startsWith(trigger)){
+        v = createSuggestion(name, "/images/app-"+id+".png");
+        v.addEventListener('click', function(){
+          v = createLink(name, "/images/app-"+id+".png", destination, true);
+          links.appendChild(v);
+          document.querySelector("#suggested").style.display = "none";
+          f = {};
+          f[id] = true;
+          chrome.storage.sync.set(f, function(){});
+        });
+        links.insertBefore(v, links.childNodes[0]);
+      }
+    });
+  }
+}
+
 chrome.storage.sync.get(null, function(result){
   btnDev = null;
   if(result["dev"] == true){
@@ -38,96 +62,37 @@ chrome.storage.sync.get(null, function(result){
   }
 
   // Citrix
-  if(result["citrix"] == true){
-    v = createLink("Citrix", "/images/app-citrix.png", "https://citrix.allenisd.org", true);
-    links.appendChild(v);
-  }
-  else{
-    chrome.tabs.query({active:true,lastFocusedWindow:true}, function(tabs){
-      tab = tabs[0];
-      if(tab.url.startsWith("https://citrix.allenisd.org")){
-        v = createSuggestion("Citrix", "/images/app-citrix.png");
-        v.addEventListener('click', function(){
-          v = createLink("Citrix", "/images/app-citrix.png", "https://citrix.allenisd.org", true);
-          links.appendChild(v);
-          document.querySelector("#suggested").style.display = "none";
-          f = {};
-          f["citrix"] = true;
-          chrome.storage.sync.set(f, function(){});
-        });
-        links.insertBefore(v, links.childNodes[0]);
-      }
-    });
-  }
+  handleApp(result,
+    "citrix",
+    "Citrix",
+    "https://citrix.allenisd.org",
+    "https://portal.allenisd.org/_sso/Web/LaunchApplication.aspx?AppPath=%22Applications%2fManaged+Applications%2fCitrixSSO%22"
+  );
 
   // ERMA
-  if(result["erma"] == true){
-    v = createLink("ERMA", "/images/app-erma.png", "https://erma.allenisd.org", true);
-    links.appendChild(v);
-  }
-  else{
-    chrome.tabs.query({active:true,lastFocusedWindow:true}, function(tabs){
-      tab = tabs[0];
-      if(tab.url.startsWith("https://erma.allenisd.org")){
-        v = createSuggestion("ERMA", "/images/app-erma.png");
-        v.addEventListener('click', function(){
-          v = createLink("ERMA", "/images/app-erma.png", "https://erma.allenisd.org", true);
-          links.appendChild(v);
-          document.querySelector("#suggested").style.display = "none";
-          f = {};
-          f["erma"] = true;
-          chrome.storage.sync.set(f, function(){});
-        });
-        links.insertBefore(v, links.childNodes[0]);
-      }
-    });
-  }
+  handleApp(result,
+    "erma",
+    "ERMA",
+    "https://erma.allenisd.org",
+    "https://erma.allenisd.org"
+  );
 
   // Eduphoria
-  if(result["eduphoria"] == true){
-    v = createLink("Eduphoria", "/images/app-eduphoria.png", "https://eduphoria.allenisd.org", true);
-    links.appendChild(v);
-  }
-  else{
-    chrome.tabs.query({active:true,lastFocusedWindow:true}, function(tabs){
-      tab = tabs[0];
-      if(tab.url.startsWith("https://eduphoria.allenisd.org")){
-        v = createSuggestion("Eduphoria", "/images/app-eduphoria.png");
-        v.addEventListener('click', function(){
-          v = createLink("Eduphoria", "/images/app-eduphoria.png", "https://eduphoria.allenisd.org", true);
-          links.appendChild(v);
-          document.querySelector("#suggested").style.display = "none";
-          f = {};
-          f["eduphoria"] = true;
-          chrome.storage.sync.set(f, function(){});
-        });
-        links.insertBefore(v, links.childNodes[0]);
-      }
-    });
-  }
+  handleApp(result,
+    "eduphoria",
+    "Eduphoria",
+    "https://eduphoria.allenisd.org",
+    "https://eduphoria.allenisd.org"
+  );
 
-  // Atriuum
-  if(result["atriuum"] == true){
-    v = createLink("Atriuum", "/images/app-atriuum.png", "https://portal.allenisd.org/_sso/Web/LaunchApplication.aspx?AppPath=%22Applications%2fManaged+Applications%2fAtriuumOPACSSO%22&MacroName=1", true);
-    links.appendChild(v);
-  }
-  else{
-    chrome.tabs.query({active:true,lastFocusedWindow:true}, function(tabs){
-      tab = tabs[0];
-      if(tab.url.startsWith("https://atriuum.allenisd.org")){
-        v = createSuggestion("Atriuum", "/images/app-atriuum.png");
-        v.addEventListener('click', function(){
-          v = createLink("Atriuum", "/images/app-atriuum.png", "https://portal.allenisd.org/_sso/Web/LaunchApplication.aspx?AppPath=%22Applications%2fManaged+Applications%2fAtriuumOPACSSO%22&MacroName=1", true);
-          links.appendChild(v);
-          document.querySelector("#suggested").style.display = "none";
-          f = {};
-          f["atriuum"] = true;
-          chrome.storage.sync.set(f, function(){});
-        });
-        links.insertBefore(v, links.childNodes[0]);
-      }
-    });
-  }
+  // Destiny
+  handleApp(
+    result,
+    "destiny",
+    "Destiny",
+    "https://allenisd.follettdestiny.com",
+    "https://portal.allenisd.org/_sso/Web/LaunchApplication.aspx?AppPath=%22Applications%2fManaged+Applications%2fDistrict+Resource+Links%2fDestinyClassicSSO%22"
+  );
 
   if(btnDev != null) links.appendChild(btnDev);
 });
