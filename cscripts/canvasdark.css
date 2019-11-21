@@ -51,11 +51,15 @@ div.tray-with-space-for-global-nav > div > ul > li > div{
 div.tray-with-space-for-global-nav > div span{
   color: #BBBBBB;
 }
+div.tray-with-space-for-global-nav > div > div{
+  color: #BBBBBB;
+}
 
 div.ic-notification .ic-notification__content{
   background-color: #2C2F33 !important;
 }
 
+/** Dashboard with card layout **/
 div.ic-Dashboard-header__layout{
   color: #DDDDDD;
   background-color: #2C2F33F2;
@@ -105,7 +109,7 @@ a.icon-calendar-day::before{
 }
 
 
-/* Todo list on dashboard */
+/* Todo list on card dashboard */
 div.Sidebar__TodoListContainer > div > ul > li{
   color: #808080 !important;
 }
@@ -121,6 +125,12 @@ div.Sidebar__TodoListContainer > div > ul > li svg{
 div.Sidebar__TodoListContainer > div > div > button{
   color: var(--ic-link-color) !important;
 }
+
+/** Dashboard with list layout **/
+.planner-day{
+  background-color: #2C2F33 !important;
+}
+
 
 /* Dashboard footer */
 footer.ic-app-footer div#footer-links a{
@@ -152,14 +162,11 @@ div.ic-app-course-menu li.section a{
   color: #AAA !important;
 }
 div.ic-app-course-menu li.section a:hover{
-  background-color: #23272A !important;
   color: #CCC !important;
 }
 div.ic-app-course-menu li.section a.active{
   color: #FFF !important;
-}
-div.ic-app-course-menu li.section a.active:hover{
-  background-color: var(--ic-brand-primary) !important;
+  border-left-color: var(--ic-brand-primary) !important;
 }
 
 
@@ -247,6 +254,9 @@ aside#right-side table.summary td{
   border-bottom-color: #394146;
 }
 
+ul#question_list li i{
+  color: #AAA !important;
+}
 div#quiz-submission-version-table table.ic-Table td,
 div#quiz-submission-version-table table.ic-Table th{
   border-bottom-color: #394146;
@@ -272,6 +282,9 @@ div.display_question div.header{
 }
 div.display_question div.answer{
   border-top-color: #394146 !important;
+}
+div.display_question span.question_points_holder{
+  color: #888 !important;
 }
 
 form#submit_quiz_form div#questions{
@@ -311,8 +324,11 @@ div.requirements_message .pill{
   box-shadow: none;
   border-color: #EEE;
 }
+.context_module .icon-check{
+  color: #1BB127 !important;
+}
 div.module-item-status-icon i.icon-check{
-  color: #1BB127;
+  color: #1BB127 !important;
 }
 div.roster-tab.tab-panel.ui-tabs-panel.form-inline{
    background-color: #3B3F44;
@@ -545,11 +561,11 @@ hr{
 
 /* Generic buttons */
 .btn, .Button, .ui-button{
-  color: #DDDDDD;
+  color: #DDDDDD !important;
 }
 .btn, .Button:not(.ic-DashboardCard__header-button):not(.disable_item_link):not(.ic-app-course-nav-toggle), .ui-button{
-  background-color: #23272A;
-  border-color: #1E2224;
+  background-color: #23272A !important;
+  border-color: #1E2224 !important;
 }
 .btn.btn-primary{
   background: var(--ic-brand-primary) !important;
@@ -562,6 +578,13 @@ hr{
 }
 .btn.btn-danger{
   background: #BF4949 !important;
+}
+
+/* Generic text inputs */
+input {
+  background: #23272A !important;
+  border: #1E2224 !important;
+  color: #FFFFFF !important;
 }
 
 /* Generic Scrollbars */
