@@ -15,6 +15,7 @@
     "activeTab",
     "notifications",
     "alarms",
+    "contextMenus",
     "*://canvas.allenisd.org/*"
   ],
   "icons":{

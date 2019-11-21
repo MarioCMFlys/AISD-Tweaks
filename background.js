@@ -186,3 +186,57 @@ chrome.omnibox.onInputEntered.addListener(function(text) {
     openQuery(text);
   }
 });
+
+function courseMenu(i, t, page){
+  r = /.*\/courses\/([0-9]*).*/g;
+  c = r.exec(i.linkUrl)[1];
+  chrome.tabs.update(null, {url: "https://canvas.allenisd.org/courses/"+c+page}, null);
+}
+
+chrome.contextMenus.create({
+  id: "as-course",
+  title: "Course Pages",
+  contexts: ["link"],
+  visible: true,
+  targetUrlPatterns: ["*://canvas.allenisd.org/courses/*"]
+});
+
+chrome.contextMenus.create({
+  title: "Home",
+  contexts: ["link"],
+  visible: true,
+  parentId: "as-course",
+  onclick: function(i, t){
+    courseMenu(i, t, "/");
+  }
+});
+
+chrome.contextMenus.create({
+  title: "Modules",
+  contexts: ["link"],
+  visible: true,
+  parentId: "as-course",
+  onclick: function(i, t){
+    courseMenu(i, t, "/modules");
+  }
+});
+
+chrome.contextMenus.create({
+  title: "Announcements",
+  contexts: ["link"],
+  visible: true,
+  parentId: "as-course",
+  onclick: function(i, t){
+    courseMenu(i, t, "/announcements");
+  }
+});
+
+chrome.contextMenus.create({
+  title: "People",
+  contexts: ["link"],
+  visible: true,
+  parentId: "as-course",
+  onclick: function(i, t){
+    courseMenu(i, t, "/users");
+  }
+});
