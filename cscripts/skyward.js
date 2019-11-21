@@ -97,7 +97,8 @@ window.addEventListener("load", function(){
 
             if(name.includes("Pre-AP") || name.includes("PAPIB")
               || name.includes("Networking")
-              || name.includes("Computer Maintenance")){ // is class pre-ap?
+              || name.includes("Computer Maintenance")
+              || name.includes("DC")){ // is class pre-ap?
               offset = 0.5;
               classes[j].innerHTML = '<span style="float:right;color:#AAA;">4.5</span>' + classes[j].innerHTML;
             }
