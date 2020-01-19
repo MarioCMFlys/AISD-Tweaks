@@ -39,6 +39,7 @@ chrome.storage.sync.get(null, function(result){
   defCheckbox("canvasPeople", true);
   defCheckbox("canvasDarkTheme", false);
   defCheckbox("canvasNotify", true);
+  defCheckbox("canvasNoThumb", false);
   // Skyward
   defCheckbox("skywardGrades", true);
   defCheckbox("skywardTab", true);
@@ -51,6 +52,7 @@ chrome.storage.sync.get(null, function(result){
     checkSet("canvasListModules");
     checkSet("canvasPeople");
     checkSet("canvasDarkTheme");
+    checkSet("canvasNoThumb");
 
     checkSet("skywardGrades");
     checkSet("skywardTab");

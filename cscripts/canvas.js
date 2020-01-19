@@ -116,6 +116,19 @@ chrome.storage.sync.get(null, function(result){
           i.href = i.href+"/modules";
           i.onclick = 'window.location = "'+i.href+'";';
         }
+
+        if(result["canvasNoThumb"] == true){
+          cardThumbs = document.querySelectorAll('div.ic-DashboardCard__header_image');
+          for(j = 0; j < cardThumbs.length; j++){
+            i = cardThumbs[j];
+            i.style["background-image"] = "";
+          }
+          cardHeros = document.querySelectorAll('div.ic-DashboardCard__header_hero');
+          for(j = 0; j < cardHeros.length; j++){
+            i = cardHeros[j];
+            i.style.opacity = 1.0;
+          }
+        }
       }
 
       // Edit the ConnectED button
