@@ -39,10 +39,10 @@ div.tray-with-space-for-global-nav > div h2{
 div.tray-with-space-for-global-nav > div hr{
   border-color: #394146 !important;
 }
-div.tray-with-space-for-global-nav > div > ul > li > span > a{
+div.tray-with-space-for-global-nav > div a{
   color: var(--ic-link-color) !important;
 }
-div.tray-with-space-for-global-nav > div > ul > li > span > a:hover{
+div.tray-with-space-for-global-nav > div a:hover{
   color: var(--ic-link-color-darkened-10);
 }
 div.tray-with-space-for-global-nav > div > ul > li > div{
@@ -57,6 +57,14 @@ div.tray-with-space-for-global-nav > div > div{
 
 div.ic-notification .ic-notification__content{
   background-color: #2C2F33 !important;
+}
+
+.standalone-icon:before {
+  color: #DDD !important;
+}
+
+button {
+  color: #DDD;
 }
 
 /** Dashboard with card layout **/
@@ -76,6 +84,9 @@ div.ic-DashboardCard{
 }
 div.ic-DashboardCard a{
   /*color: #207FDF;*/
+}
+.ic-DashboardCard__action {
+  color: #AAA !important;
 }
 
 /* Some list thing, possibly "Coming Up" or "Recent Feedback" on dashboard, too tired to find out */
@@ -124,6 +135,10 @@ div.Sidebar__TodoListContainer > div > ul > li svg{
 }
 div.Sidebar__TodoListContainer > div > div > button{
   color: var(--ic-link-color) !important;
+}
+div.ToDoSidebarItem__Info > span,
+div.ToDoSidebarItem__Info li {
+  color: #AAA !important;
 }
 
 /** Dashboard with list layout **/
@@ -304,6 +319,11 @@ div.ic-Layout-contentMain div.item-group-container div.ig-header.header,
 div.ic-Layout-contentMain div.item-group-container div.ig-header.header span.name{
   color: #EEE;
   text-shadow: none;
+}
+.item-group-condensed div.ig-header {
+  background-color: #34383C !important;
+  border-color: #474C52 !important;
+  color: #EEE !important;
 }
 
 div.ic-Layout-contentMain div.item-group-container div.content div.ig-row{
@@ -497,6 +517,10 @@ table.notification-prefs-table,table.notification-prefs-table td, table.notifica
   border-color: #394146 !important;
 }
 
+td.comm-event-option i {
+  color: #FFF !important;
+}
+
 .profile_table .data_description{
   color: #AAA !important;
 }
@@ -581,10 +605,30 @@ hr{
 }
 
 /* Generic text inputs */
-input {
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"], 
+.uneditable-input {
   background: #23272A !important;
   border: #1E2224 !important;
   color: #FFFFFF !important;
+}
+
+div.caret {
+  border-top-color: #FFF !important;
 }
 
 /* Generic Scrollbars */
@@ -633,6 +677,36 @@ li.entry, li.entry article.discussion_entry div.discussion-section{
   color: #DDD !important;
 }
 
+/* Discussions list */
+div.pinned-discussions-v2__wrapper,
+div.unpinned-discussions-v2__wrapper,
+div.closed-for-comments-discussions-v2__wrapper {
+  background-color: #3B3F44 !important;
+  border-color: #474C52 !important;
+}
+
+div.pinned-discussions-v2__wrapper span,
+div.unpinned-discussions-v2__wrapper span,
+div.closed-for-comments-discussions-v2__wrapper span {
+  color: #DDD;
+}
+.ic-discussion-row {
+  background-color: #3B3F44 !important;
+  box-shadow: none !important;
+  border: 1px solid #474C52 !important;
+}
+.ic-discussion-row span {
+  color: #DDD !important;
+}
+
+.discussions-v2__container-image {
+  background-color: #3B3F44 !important;
+  border-color: #474C52 !important;
+}
+
+.ic-unread-badge__total-count {
+  background: #3E4D60 !important;
+}
 
 /* Canvas Calendar */
 table tbody.fc-body{
@@ -684,3 +758,56 @@ a.ig-title{
 a.element_toggler.accessible-toggler{
   color: #97C3D3 !important;
 }
+
+
+
+/* Course grade page */
+#grades_summary td.details a {
+  color: #DDD !important;
+}
+
+span.submission-missing-pill > span,
+span.submission-late-pill > span {
+  background: inherit !important;
+}
+
+/* Dialog popup */
+.ui-dialog .ui-dialog-titlebar.ui-widget-header,
+.ui-dialog .ui-datepicker .ui-widget-header.ui-datepicker-header,
+.ui-datepicker .ui-dialog .ui-widget-header.ui-datepicker-header {
+  background: #2C2F33 !important;
+  border-bottom-color: #394146 !important;
+}
+.ui-widget-content {
+  background: #2C2F33 !important;
+  color: #DDD !important;
+  border-left-color: #394146 !important;
+  border-top-color: #394146 !important;
+  border-bottom-color: #394146 !important;
+  border-right-color: #394146 !important;
+}
+
+/* Autocomplete text field */
+.ac-input-box {
+  background: #23272A !important;
+  border: none !important;
+}
+.ac-token {
+  background: #2A3F4E !important;
+}
+.ac-result-container {
+  background: #23272A !important;
+  border-color: #394146 !important;
+}
+.ac-result-wrapper:before {
+  border-bottom-color: #394146 !important;
+}
+.ac-result-wrapper:after {
+  border-bottom-color: #23272A !important;
+}
+
+/* Context menu */
+.ui-menu .ui-menu-item a {
+  color: #DDD !important;
+}
+
