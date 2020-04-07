@@ -67,6 +67,11 @@ button {
   color: #DDD;
 }
 
+/** Make images have white background when hovered **/
+img:hover {
+  background-color: #FFF !important;
+}
+
 /** Dashboard with card layout **/
 div.ic-Dashboard-header__layout{
   color: #DDDDDD;
