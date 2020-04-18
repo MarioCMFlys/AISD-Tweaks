@@ -681,6 +681,13 @@ li.entry, li.entry article.discussion_entry div.discussion-pubdate time span{
 li.entry, li.entry article.discussion_entry div.discussion-section{
   color: #DDD !important;
 }
+.discussion-reply-action, .discussion-rate-action {
+  color: #AAA !important;
+}
+.read .discussion-read-state {
+  background: #23272A !important;
+  border-color: #394146 !important;
+}
 
 /* Discussions list */
 div.pinned-discussions-v2__wrapper,
