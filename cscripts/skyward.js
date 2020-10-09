@@ -168,7 +168,8 @@ window.addEventListener("load", function(){
 
       if(window.location.pathname == "/scripts/wsisa.dll/WService=wsEAplus/seplog01.w"){
         if(result["skywardBanner"] == true || result["skywardBanner"] != false){
-          document.querySelector("div#rowTop").style.display="none";
+          rowTop = document.querySelector("div#rowTop");
+          if(rowTop != null) rowTop.style.display="none";
         }
       }
 
